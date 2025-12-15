@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PJ Mason - Design Leader</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            padding: 60px 0 40px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        h1 {
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+        
+        .tagline {
+            font-size: 20px;
+            color: #666;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+        
+        .contact-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-links a {
+            color: #0066cc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-links a:hover {
+            color: #004499;
+        }
+        
+        /* Main Content */
+        main {
+            padding: 60px 0;
+        }
+        
+        section {
+            margin-bottom: 80px;
+        }
+        
+        h2 {
+            font-size: 32px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            color: #222;
+        }
+        
+        .intro {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+            max-width: 800px;
+        }
+        
+        /* Experience Highlights */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .experience-card {
+            padding: 30px;
+            background: #f9f9f9;
+            border-left: 3px solid #0066cc;
+        }
+        
+        .experience-card h3 {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #222;
+        }
+        
+        .experience-card .role {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .experience-card p {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        /* Awards Grid */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .award-item {
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 4px;
+        }
+        
+        .award-item strong {
+            display: block;
+            color: #222;
+            margin-bottom: 5px;
+        }
+        
+        .award-item span {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        /* Skills */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .skill-tag {
+            padding: 10px 20px;
+            background: #f0f0f0;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+            
+            .tagline {
+                font-size: 18px;
+            }
+            
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>PJ Mason</h1>
+            <p class="tagline">Design Leader | Industrial & UX/UI Design | 20+ Years Experience</p>
+            <div class="contact-links">
+                <a href="mailto:pjmason1220@gmail.com">pjmason1220@gmail.com</a>
+                <span style="color: #ccc;">|</span>
+                <span>South Lebanon, Ohio</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section id="about">
+                <h2>About</h2>
+                <p class="intro">
+                    Designer, maker, leader, entrepreneur, mentor, and lecturer with over 20 years of corporate 
+                    and consulting experience in Industrial and UX/UI Design. I believe that great product 
+                    experiences are built on a strong strategic foundation of deep user empathy, and are delivered 
+                    via hands-on prototyping, rapid visualization, and user co-creation. I am a highly motivated 
+                    leader and collaborator with a passion for creating and enabling teams and capabilities that 
+                    create value and opportunities to step change industries.
+                </p>
+            </section>
+
+            <section id="experience">
+                <h2>Experience Highlights</h2>
+                <div class="experience-grid">
+                    <div class="experience-card">
+                        <h3>P&G Oral Care & Smart Products</h3>
+                        <p class="role">Senior Director, Design | 2014–Present</p>
+                        <p>Leading design organizations across North America, China, and Europe. Responsible for 
+                        vision development and category re-platforming programs delivering hundreds of millions 
+                        in topline growth.</p>
+                    </div>
+                    
+                    <div class="experience-card">
+                        <h3>Oral-B iO</h3>
+                        <p class="role">Design Leadership</p>
+                        <p>Led vision and design development for award-winning Oral-B iO platform. Multiple 
+                        international design awards including German Design Award Gold, iF Design Award, 
+                        Red Dot, and CES Innovation Award.</p>
+                    </div>
+                    
+                    <div class="experience-card">
+                        <h3>Digital Design Capability</h3>
+                        <p class="role">P&G First</p>
+                        <p>Led development of P&G's first Digital Design Capability, transitioning from external 
+                        resources to fully internalized capability deployed against the category's biggest 
+                        consumer Jobs-to-be-Done.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills">
+                <h2>Core Capabilities</h2>
+                <div class="skills">
+                    <span class="skill-tag">Design Leadership</span>
+                    <span class="skill-tag">Design Thinking</span>
+                    <span class="skill-tag">UX/UI Design</span>
+                    <span class="skill-tag">Industrial Design</span>
+                    <span class="skill-tag">Prototyping</span>
+                    <span class="skill-tag">Innovation Strategy</span>
+                    <span class="skill-tag">Portfolio Management</span>
+                    <span class="skill-tag">Team Building</span>
+                    <span class="skill-tag">Fusion 360</span>
+                    <span class="skill-tag">Figma</span>
+                    <span class="skill-tag">Adobe Creative Suite</span>
+                    <span class="skill-tag">Front-end Development</span>
+                </div>
+            </section>
+
+            <section id="awards">
+                <h2>Recognition</h2>
+                <div class="awards-grid">
+                    <div class="award-item">
+                        <strong>German Design Award - Gold</strong>
+                        <span>Oral-B iO, Oral-B Clic, Oral-B Smart Series 7000 App</span>
+                    </div>
+                    <div class="award-item">
+                        <strong>iF Design Award</strong>
+                        <span>Oral-B iO, Oral-B Clic</span>
+                    </div>
+                    <div class="award-item">
+                        <strong>Red Dot Award</strong>
+                        <span>Oral-B iO, Oral-B Clic, Oral-B Smart Series 7000 App</span>
+                    </div>
+                    <div class="award-item">
+                        <strong>CES Innovation Award</strong>
+                        <span>Oral-B iO</span>
+                    </div>
+                    <div class="award-item">
+                        <strong>Cannes Lion - Bronze</strong>
+                        <span>Oral-B Smart Series 7000 App</span>
+                    </div>
+                    <div class="award-item">
+                        <strong>Nielsen Norman Group</strong>
+                        <span>User Experience Certification</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="education">
+                <h2>Education</h2>
+                <p class="intro">
+                    <strong>University of Cincinnati</strong><br>
+                    Bachelor of Science in Industrial Design, 1999<br>
+                    Industrial Design Student of the Year
+                </p>
+                <br>
+                <p class="intro">
+                    <strong>Harvard Business School - Executive Education</strong><br>
+                    Launching New Ventures (2014)<br>
+                    Leading Product Innovation (2010)
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 PJ Mason. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
