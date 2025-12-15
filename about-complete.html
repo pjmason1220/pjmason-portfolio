@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - PJ Mason</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* About Page Specific Styles */
+        .about-hero {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+            align-items: start;
+        }
+        
+        .headshot-container {
+            position: relative;
+        }
+        
+        .headshot {
+            width: 100%;
+            height: 400px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .headshot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        .about-intro h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .about-intro .subtitle {
+            font-size: 20px;
+            color: #0066cc;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        
+        .bio-section {
+            margin-bottom: 80px;
+        }
+        
+        .bio-section h2 {
+            font-size: 28px;
+            margin-bottom: 25px;
+            color: #222;
+        }
+        
+        .bio-content {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #444;
+            max-width: 900px;
+        }
+        
+        .bio-content p {
+            margin-bottom: 20px;
+        }
+        
+        .bio-content strong {
+            color: #222;
+            font-weight: 600;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            margin-top: 40px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #0066cc;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 30px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -46px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            background: #0066cc;
+            border: 3px solid #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px #0066cc;
+        }
+        
+        .timeline-year {
+            font-size: 14px;
+            color: #0066cc;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-company {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-description {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        /* Philosophy Cards */
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .philosophy-card {
+            padding: 35px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-top: 4px solid #0066cc;
+        }
+        
+        .philosophy-card h3 {
+            font-size: 22px;
+            color: #222;
+            margin-bottom: 15px;
+        }
+        
+        .philosophy-card p {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        /* Education Section */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .education-card {
+            padding: 35px;
+            background: #fff;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+        }
+        
+        .education-card h3 {
+            font-size: 22px;
+            color: #0066cc;
+            margin-bottom: 10px;
+        }
+        
+        .education-card .degree {
+            font-size: 18px;
+            color: #222;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .education-card .year {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .education-card .details {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .education-card .honor {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 15px;
+            color: #0066cc;
+            font-weight: 500;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-hero {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .headshot {
+                height: 350px;
+            }
+            
+            .about-intro h1 {
+                font-size: 32px;
+            }
+            
+            .timeline {
+                padding-left: 30px;
+            }
+            
+            .timeline-item {
+                padding-left: 20px;
+            }
+            
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">PJ Mason</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="patents.html">Patents</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="about-hero">
+                <div class="headshot-container">
+                    <div class="headshot">
+                        <!-- Replace this div with: <img src="images/pj-mason-headshot.jpg" alt="PJ Mason"> -->
+                        Professional Headshot<br>Coming Soon
+                    </div>
+                </div>
+                <div class="about-intro">
+                    <h1>PJ Mason</h1>
+                    <p class="subtitle">Design Leader | Industrial & UX/UI Design</p>
+                    <p style="font-size: 17px; line-height: 1.7; color: #555;">
+                        Designer, maker, leader, entrepreneur, mentor, and lecturer with over 20 years of corporate 
+                        and consulting experience in Industrial and UX/UI Design. Based in South Lebanon, Ohio, 
+                        leading global design teams across North America, Europe, and Asia.
+                    </p>
+                </div>
+            </div>
+
+            <section class="bio-section">
+                <h2>Creating Impact Through Design</h2>
+                <div class="bio-content">
+                    <p>
+                        For over two decades, I've been driven by a simple but powerful belief: the best products emerge 
+                        when deep user empathy meets hands-on creation. As a designer, maker, and leader, I've spent my 
+                        career building teams and capabilities that don't just create beautiful products—they transform 
+                        entire categories and create lasting business value.
+                    </p>
+                    <p>
+                        My journey began at the University of Cincinnati's College of Design, where I was named Industrial 
+                        Design Student of the Year in 1999. Those formative years taught me that great design requires both 
+                        strategic thinking and the ability to make ideas tangible. This philosophy has guided my career ever 
+                        since, from my early days working across continents—Knoxville, Hong Kong, Cincinnati—to leading 
+                        global design teams across North America, Europe, and Asia.
+                    </p>
+
+                    <p><strong>Building Capabilities, Not Just Products</strong></p>
+                    <p>
+                        What excites me most isn't just designing the next great product—it's building the teams, processes, 
+                        and capabilities that enable sustained innovation. At Procter & Gamble, where I've spent the last 20+ 
+                        years, I've had the privilege of leading design organizations through transformative change. One of my 
+                        proudest achievements was developing P&G's first Digital Design Capability, taking it from external 
+                        dependencies to a fully internalized team that now tackles our category's most important consumer needs.
+                    </p>
+                    <p>
+                        This capability-building mindset extends to how I lead. I believe in creating environments where designers 
+                        can do their best work—where rapid prototyping, user co-creation, and strategic thinking aren't just 
+                        buzzwords, but daily practices. My team of 16 designers across three continents doesn't just execute; 
+                        they innovate, challenge assumptions, and push boundaries.
+                    </p>
+
+                    <p><strong>Design as Strategic Advantage</strong></p>
+                    <p>
+                        Throughout my career, I've seen firsthand how design can be a powerful strategic tool. Whether it was 
+                        leading the Pantene global restage, reimagining HairCare packaging systems that saved $55 million annually 
+                        while reducing complexity by 30%, or developing the vision for what became the award-winning Oral-B iO 
+                        platform, I've always approached design challenges through both a creative and business lens.
+                    </p>
+                    <p>
+                        My executive education at Harvard Business School—in both Launching New Ventures and Leading Product 
+                        Innovation—reinforced this dual perspective. Great design isn't just aesthetically pleasing; it drives 
+                        measurable business outcomes. The programs I've led or co-developed have generated hundreds of millions 
+                        in topline growth for the Oral Care category over the past 13 years.
+                    </p>
+
+                    <p><strong>Oral-B iO: A Case Study in Vision and Value</strong></p>
+                    <p>
+                        The Oral-B iO project exemplifies my approach to design leadership. This wasn't just about creating another 
+                        electric toothbrush—it was about reimagining the entire brushing experience through the lens of user needs, 
+                        technological possibility, and brand equity. Leading the vision development and design across multiple 
+                        innovation verticals—product, accessories, materials & finishes, and human-computer interface—required 
+                        orchestrating insights from consumer research, engineering, marketing, and manufacturing.
+                    </p>
+                    <p>
+                        The impact speaks for itself: Oral-B iO has generated hundreds of millions in topline sales growth while 
+                        simultaneously earning some of the industry's most prestigious design awards—German Design Award Gold, iF 
+                        Design Award, Red Dot, and CES Innovation Award. This dual success validates not just the aesthetic and 
+                        functional excellence of the product, but proves that great design directly drives business results. The 
+                        recognition demonstrates that when you get the user experience right, commercial success follows.
+                    </p>
+
+                    <p><strong>Philosophy: Empathy, Prototyping, Co-creation</strong></p>
+                    <p>
+                        My design philosophy centers on three pillars: deep user empathy, rapid visualization through prototyping, 
+                        and user co-creation. I believe you can't design great experiences from a conference room—you need to be in 
+                        the field, understanding real needs, building quick prototypes, and iterating with users. This hands-on 
+                        approach, combined with strategic foresight, allows teams to take calculated risks and innovate boldly.
+                    </p>
+                    <p>
+                        Whether I'm sketching concepts, building CAD models in Fusion 360, designing interfaces in Figma, or even 
+                        coding light front-end experiences in Swift or Flutter, I stay close to the craft. Leadership doesn't mean 
+                        stepping away from making—it means modeling the behaviors you want to see in your team.
+                    </p>
+
+                    <p><strong>Looking Forward</strong></p>
+                    <p>
+                        As I continue my work in design leadership, I remain energized by opportunities to step-change industries and 
+                        create value through design. With over 300 patents to my name spanning product innovation, interface design, 
+                        packaging, and manufacturing processes, I'm constantly exploring new ways to solve problems and create 
+                        delightful experiences.
+                    </p>
+                    <p>
+                        But beyond the patents and awards, what drives me is the opportunity to mentor the next generation of designers, 
+                        build capabilities that outlast any single project, and continue pushing the boundaries of what's possible when 
+                        empathy, creativity, and strategic thinking come together.
+                    </p>
+                </div>
+            </section>
+
+            <section class="bio-section">
+                <h2>Career Journey</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2014 - Present</div>
+                        <div class="timeline-title">Senior Director, Design</div>
+                        <div class="timeline-company">P&G - Oral Care & Smart Products | Frankfurt & Cincinnati</div>
+                        <div class="timeline-description">
+                            Leading global design teams across North America, China, and Europe. Responsible for vision 
+                            development across multiple innovation platforms including Oral-B iO, which generated hundreds 
+                            of millions in sales growth. Developed P&G's first Digital Design Capability from external 
+                            resources to fully internalized team.
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-year">2010 - 2014</div>
+                        <div class="timeline-title">Principal Design Manager</div>
+                        <div class="timeline-company">P&G - Oral Care | Cincinnati, OH</div>
+                        <div class="timeline-description">
+                            Led Oral Care Design Front End Innovation as part of multi-functional FEI Leadership Team. 
+                            Created portfolio management systems linking trends, consumer understanding, and technologies 
+                            into innovation portfolio. Led strategic definition of category-first Augmented Service Offering.
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-year">2008 - 2010</div>
+                        <div class="timeline-title">Principal Design Manager</div>
+                        <div class="timeline-company">P&G - Hair Care | Cincinnati, OH</div>
+                        <div class="timeline-description">
+                            Led cross-category packaging asset deployment strategy for HairCare. Delivered $55M annual cost 
+                            savings, 30% reduction in portfolio complexity, and 50% reduction in time-to-market for new 
+                            packaging initiatives.
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-year">2005 - 2008</div>
+                        <div class="timeline-title">Senior Design Manager</div>
+                        <div class="timeline-company">P&G - Hair Care | Cincinnati & Kobe, Japan</div>
+                        <div class="timeline-description">
+                            Led 3D vision development for Pantene brand globally as part of multi-functional team that 
+                            restaged the brand. Designed and delivered 3D packaging assets for Pantene total brand restage 
+                            to multiple countries and regions globally.
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-year">2003 - 2005</div>
+                        <div class="timeline-title">Design Manager</div>
+                        <div class="timeline-company">P&G - Fem Care | Cincinnati, OH</div>
+                        <div class="timeline-description">
+                            Led development of new-to-world brand for FemCare category whitespace. Delivered 3rd largest 
+                            initiative for Fem Care in previous 10 years. Initiated first-ever Design partnership with 
+                            in-house prototypers.
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-year">2000 - 2003</div>
+                        <div class="timeline-title">Senior Industrial Designer</div>
+                        <div class="timeline-company">LPK | Cincinnati, OH</div>
+                        <div class="timeline-description">
+                            Design consultancy work across multiple consumer product categories.
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-year">1996 - 2000</div>
+                        <div class="timeline-title">Industrial Designer</div>
+                        <div class="timeline-company">Philips Consumer Electronics & Karrot Design | Knoxville, TN & Hong Kong</div>
+                        <div class="timeline-description">
+                            Early career roles including co-op positions at Philips Consumer Electronics and international 
+                            experience at Karrot Design in Hong Kong, China.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bio-section">
+                <h2>Design Philosophy</h2>
+                <div class="philosophy-grid">
+                    <div class="philosophy-card">
+                        <h3>Deep User Empathy</h3>
+                        <p>
+                            Great products start with genuine understanding of user needs, behaviors, and pain points. 
+                            I believe in spending time in the field, observing real use cases, and building empathy 
+                            before jumping to solutions.
+                        </p>
+                    </div>
+                    <div class="philosophy-card">
+                        <h3>Rapid Prototyping</h3>
+                        <p>
+                            Ideas need to be tangible to be evaluated. Through sketching, physical prototypes, and 
+                            digital mockups, I believe in making concepts real quickly so teams can learn, iterate, 
+                            and improve faster.
+                        </p>
+                    </div>
+                    <div class="philosophy-card">
+                        <h3>User Co-creation</h3>
+                        <p>
+                            The best insights come from designing with users, not just for them. Involving users in 
+                            the design process ensures solutions truly meet their needs and creates products people love.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bio-section">
+                <h2>Education & Executive Development</h2>
+                <div class="education-grid">
+                    <div class="education-card">
+                        <h3>University of Cincinnati</h3>
+                        <p class="degree">Bachelor of Science in Industrial Design</p>
+                        <p class="year">1999</p>
+                        <p class="details">
+                            College of Design, Architecture, Art, and Planning
+                        </p>
+                        <p class="honor">Industrial Design Student of the Year - 1999</p>
+                    </div>
+
+                    <div class="education-card">
+                        <h3>Harvard Business School</h3>
+                        <p class="degree">Executive Education</p>
+                        <p class="year">2010 & 2014</p>
+                        <p class="details">
+                            <strong>Launching New Ventures</strong> (2014)<br>
+                            Focused on entrepreneurship, business model innovation, and bringing new products to market.
+                        </p>
+                        <p class="details" style="margin-top: 15px;">
+                            <strong>Leading Product Innovation</strong> (2010)<br>
+                            Strategic frameworks for leading innovation teams and driving product development excellence.
+                        </p>
+                    </div>
+
+                    <div class="education-card">
+                        <h3>Nielsen Norman Group</h3>
+                        <p class="degree">User Experience Certification</p>
+                        <p class="details">
+                            Industry-recognized certification in UX research, design principles, and usability best practices 
+                            from the leading UX research and consulting firm.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 PJ Mason. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
