@@ -5,6 +5,217 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - PJ Mason</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Portfolio Page Specific Styles */
+        .portfolio-hero {
+            text-align: center;
+            padding: 60px 0;
+            margin-bottom: 60px;
+        }
+        
+        .portfolio-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .portfolio-hero p {
+            font-size: 18px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+        
+        .project-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,102,204,0.15);
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .project-image.placeholder::before {
+            content: "Image Coming Soon";
+            color: #0066cc;
+            font-size: 16px;
+            font-weight: 600;
+            opacity: 0.4;
+        }
+        
+        .project-content {
+            padding: 30px;
+        }
+        
+        .project-categories {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+        
+        .category-tag {
+            padding: 6px 14px;
+            background: #e8f4f8;
+            color: #0066cc;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        
+        .project-title {
+            font-size: 26px;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+        
+        .project-description {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        .project-highlights {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        
+        .project-highlights li {
+            font-size: 15px;
+            color: #555;
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        
+        .project-highlights li::before {
+            content: "✓";
+            color: #0066cc;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .project-impact {
+            background: #f9f9f9;
+            padding: 15px 20px;
+            border-left: 3px solid #0066cc;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .project-impact strong {
+            color: #222;
+            font-size: 15px;
+        }
+        
+        .project-impact p {
+            margin: 5px 0 0 0;
+            font-size: 15px;
+            color: #555;
+        }
+        
+        .project-awards {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .project-awards h4 {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .awards-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .award-badge {
+            padding: 5px 12px;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #666;
+        }
+        
+        .view-case-study {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #0066cc;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: background 0.3s;
+            margin-top: 15px;
+        }
+        
+        .view-case-study:hover {
+            background: #004499;
+        }
+        
+        .view-case-study.coming-soon {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .view-case-study.coming-soon:hover {
+            background: #ccc;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .portfolio-hero h1 {
+                font-size: 36px;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-image {
+                height: 250px;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -23,10 +234,160 @@
 
     <main>
         <div class="container">
-            <h1>Portfolio</h1>
-            <p>Project showcase coming soon...</p>
-            
-            <!-- Future: Project gallery will go here -->
+            <div class="portfolio-hero">
+                <h1>Portfolio</h1>
+                <p>
+                    Two decades of design leadership across product innovation, digital experiences, 
+                    and integrated systems. From award-winning consumer products to groundbreaking 
+                    digital capabilities, each project represents a commitment to user-centered design 
+                    and measurable business impact.
+                </p>
+            </div>
+
+            <div class="portfolio-grid">
+                <!-- Project 1: Oral-B iO Toothbrush -->
+                <div class="project-card">
+                    <div class="project-image placeholder">
+                        <!-- Replace with actual product image -->
+                    </div>
+                    <div class="project-content">
+                        <div class="project-categories">
+                            <span class="category-tag">Product Design</span>
+                            <span class="category-tag">Innovation</span>
+                            <span class="category-tag">UX Design</span>
+                        </div>
+                        
+                        <h2 class="project-title">Oral-B iO Electric Toothbrush</h2>
+                        
+                        <p class="project-description">
+                            Revolutionary electric toothbrush platform combining breakthrough micro-vibrating 
+                            technology with AI-powered position detection. Led vision development and design 
+                            leadership for the most awarded product in Oral-B history, reimagining the entire 
+                            brushing experience through user-centered innovation.
+                        </p>
+                        
+                        <ul class="project-highlights">
+                            <li>First-of-its-kind iO Magnetic Technology with gentle micro-vibrations</li>
+                            <li>AI Position Detection tracking across all 3 tooth surfaces</li>
+                            <li>Interactive color display with real-time feedback</li>
+                            <li>Smart Pressure Sensor protecting gums and enamel</li>
+                            <li>7 personalized cleaning modes</li>
+                        </ul>
+                        
+                        <div class="project-impact">
+                            <strong>Commercial Impact:</strong>
+                            <p>Generated hundreds of millions in topline sales growth while earning the industry's most prestigious design awards</p>
+                        </div>
+                        
+                        <div class="project-awards">
+                            <h4>AWARDS & RECOGNITION</h4>
+                            <div class="awards-list">
+                                <span class="award-badge">German Design Award - Gold</span>
+                                <span class="award-badge">iF Design Award</span>
+                                <span class="award-badge">Red Dot Award</span>
+                                <span class="award-badge">CES Innovation Award</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="view-case-study coming-soon">Case Study Coming Soon</a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Oral-B App -->
+                <div class="project-card">
+                    <div class="project-image placeholder">
+                        <!-- Replace with app screenshot -->
+                    </div>
+                    <div class="project-content">
+                        <div class="project-categories">
+                            <span class="category-tag">UX/UI Design</span>
+                            <span class="category-tag">Digital Product</span>
+                            <span class="category-tag">Mobile App</span>
+                        </div>
+                        
+                        <h2 class="project-title">Oral-B Connected App</h2>
+                        
+                        <p class="project-description">
+                            Pioneering digital experience connecting Bluetooth-enabled toothbrushes to 
+                            smartphones, transforming brushing behavior through real-time coaching and 
+                            personalized insights. Led development of P&G's first Digital Design Capability, 
+                            creating an ecosystem that fundamentally improves oral health outcomes.
+                        </p>
+                        
+                        <ul class="project-highlights">
+                            <li>3D Brushing Recognition with AI position tracking</li>
+                            <li>Real-time coaching and personalized feedback</li>
+                            <li>Interactive gum bleeding tracker</li>
+                            <li>Apple Health integration</li>
+                            <li>Gamification elements and achievement system</li>
+                        </ul>
+                        
+                        <div class="project-impact">
+                            <strong>User Impact:</strong>
+                            <p>Over 90% of users brush for dentist-recommended 2+ minutes; 82% experienced noticeable oral health improvement within 6-8 weeks</p>
+                        </div>
+                        
+                        <div class="project-awards">
+                            <h4>AWARDS & RECOGNITION</h4>
+                            <div class="awards-list">
+                                <span class="award-badge">German Design Award - Gold</span>
+                                <span class="award-badge">Red Dot Award</span>
+                                <span class="award-badge">Cannes Lion - Bronze</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="view-case-study coming-soon">Case Study Coming Soon</a>
+                    </div>
+                </div>
+
+                <!-- Project 3: iO Sense Smart Charger -->
+                <div class="project-card">
+                    <div class="project-image placeholder">
+                        <!-- Replace with charging base image -->
+                    </div>
+                    <div class="project-content">
+                        <div class="project-categories">
+                            <span class="category-tag">Product Design</span>
+                            <span class="category-tag">Interface Design</span>
+                            <span class="category-tag">Smart Home</span>
+                        </div>
+                        
+                        <h2 class="project-title">iO Sense Connected Charging Base</h2>
+                        
+                        <p class="project-description">
+                            Revolutionary smart charging stand that serves as a brushing coach, providing 
+                            real-time feedback without requiring the app to be open. Integrated LED guidance 
+                            system and digital display transform the charging base from passive accessory 
+                            to active coaching tool, making personalized dental care effortless.
+                        </p>
+                        
+                        <ul class="project-highlights">
+                            <li>Real-time coverage guidance via LED light array</li>
+                            <li>Built-in digital clock and 2-minute timer</li>
+                            <li>Pressure sensor feedback directly on charger</li>
+                            <li>6-zone mouth mapping visualization</li>
+                            <li>3-hour fast magnetic charging</li>
+                        </ul>
+                        
+                        <div class="project-impact">
+                            <strong>Innovation:</strong>
+                            <p>First-in-category integration of coaching technology into charging base, eliminating need for phone interaction during brushing routine</p>
+                        </div>
+                        
+                        <a href="#" class="view-case-study coming-soon">Case Study Coming Soon</a>
+                    </div>
+                </div>
+            </div>
+
+            <section style="margin-top: 60px; padding: 50px; background: #f9f9f9; border-radius: 8px; text-align: center;">
+                <h2 style="font-size: 32px; margin-bottom: 20px;">Design Leadership & Innovation</h2>
+                <p style="max-width: 700px; margin: 0 auto; font-size: 17px; line-height: 1.8; color: #555;">
+                    These projects represent the intersection of deep user empathy, technological innovation, 
+                    and business strategy. Each demonstrates how design thinking combined with rigorous 
+                    execution can create products that not only win awards but drive meaningful commercial 
+                    success and improve people's lives.
+                </p>
+            </section>
         </div>
     </main>
 
