@@ -5,6 +5,226 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patents - PJ Mason</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Patents Page Specific Styles */
+        .patents-hero {
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 8px;
+            margin-bottom: 60px;
+        }
+        
+        .patents-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #222;
+        }
+        
+        .patents-hero .subtitle {
+            font-size: 20px;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+        
+        .patent-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #0066cc;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 16px;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .section-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .featured-patents {
+            margin-bottom: 80px;
+        }
+        
+        .featured-patents h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+        }
+        
+        .patent-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .patent-card {
+            background: #fff;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 30px;
+            transition: all 0.3s;
+        }
+        
+        .patent-card:hover {
+            border-color: #0066cc;
+            box-shadow: 0 4px 20px rgba(0,102,204,0.1);
+            transform: translateY(-2px);
+        }
+        
+        .patent-number {
+            font-size: 14px;
+            color: #0066cc;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .patent-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        
+        .patent-category {
+            display: inline-block;
+            padding: 6px 12px;
+            background: #f0f0f0;
+            border-radius: 20px;
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .patent-description {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        
+        .patent-date {
+            font-size: 14px;
+            color: #999;
+        }
+        
+        .category-section {
+            margin-bottom: 60px;
+        }
+        
+        .category-section h2 {
+            font-size: 32px;
+            color: #222;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #0066cc;
+        }
+        
+        .category-description {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+        
+        .patents-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .patents-table thead {
+            background: #f5f5f5;
+        }
+        
+        .patents-table th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            color: #222;
+            font-size: 14px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .patents-table td {
+            padding: 15px;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 14px;
+            color: #555;
+        }
+        
+        .patents-table tbody tr:hover {
+            background: #f9f9f9;
+        }
+        
+        .patents-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .placeholder-note {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .placeholder-note p {
+            margin: 0;
+            color: #856404;
+            font-size: 15px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .patents-hero h1 {
+                font-size: 36px;
+            }
+            
+            .patent-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .patents-table {
+                font-size: 13px;
+            }
+            
+            .patents-table th,
+            .patents-table td {
+                padding: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -23,10 +243,215 @@
 
     <main>
         <div class="container">
-            <h1>Patents</h1>
-            <p class="intro">Over 300 patents across product innovation, interface design, packaging, and manufacturing processes.</p>
-            
-            <!-- Future: Patent portfolio will go here -->
+            <div class="patents-hero">
+                <h1>Patent Portfolio</h1>
+                <p class="subtitle">
+                    Over two decades of innovation spanning product design, interface development, 
+                    packaging systems, and manufacturing processes. Each patent represents a solution 
+                    to real user needs and business challenges.
+                </p>
+                <div class="patent-stats">
+                    <div class="stat-card">
+                        <span class="stat-number">300+</span>
+                        <span class="stat-label">Total Patents</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Years of Innovation</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">4</span>
+                        <span class="stat-label">Core Categories</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="section-intro">
+                My patent portfolio reflects a comprehensive approach to design innovation—from reimagining 
+                user interactions to developing novel manufacturing processes. These inventions have contributed 
+                to hundreds of millions in commercial success while advancing the state of the art in consumer 
+                product design.
+            </p>
+
+            <section class="featured-patents">
+                <h2>Featured Patents</h2>
+                
+                <div class="placeholder-note">
+                    <p><strong>📝 Content Note:</strong> Add your top 10-15 hero patents here with descriptions, patent numbers, and dates. These should be your most impactful or award-winning inventions.</p>
+                </div>
+
+                <div class="patent-grid">
+                    <!-- Example Patent Card - Duplicate and customize -->
+                    <div class="patent-card">
+                        <div class="patent-number">US Patent #XXXXXXX</div>
+                        <h3 class="patent-title">Electric Toothbrush with Oscillating-Rotating Head</h3>
+                        <span class="patent-category">Product Innovation</span>
+                        <p class="patent-description">
+                            Revolutionary brushing mechanism that combines oscillating and rotating movements 
+                            for superior plaque removal. Core innovation behind Oral-B iO platform.
+                        </p>
+                        <div class="patent-date">Filed: 20XX | Granted: 20XX</div>
+                    </div>
+
+                    <div class="patent-card">
+                        <div class="patent-number">US Patent #XXXXXXX</div>
+                        <h3 class="patent-title">Smart Toothbrush with Real-time Feedback Display</h3>
+                        <span class="patent-category">Interface Design</span>
+                        <p class="patent-description">
+                            Interactive display system providing immediate brushing feedback to users, 
+                            integrating pressure sensors and motion tracking for optimal oral care.
+                        </p>
+                        <div class="patent-date">Filed: 20XX | Granted: 20XX</div>
+                    </div>
+
+                    <div class="patent-card">
+                        <div class="patent-number">US Patent #XXXXXXX</div>
+                        <h3 class="patent-title">Modular Packaging System with Interchangeable Components</h3>
+                        <span class="patent-category">Packaging & Materials</span>
+                        <p class="patent-description">
+                            Flexible packaging architecture enabling rapid brand customization while reducing 
+                            manufacturing complexity by 30% and time-to-market by 50%.
+                        </p>
+                        <div class="patent-date">Filed: 20XX | Granted: 20XX</div>
+                    </div>
+
+                    <!-- Add more patent cards as needed -->
+                </div>
+            </section>
+
+            <section class="category-section">
+                <h2>Product Innovation</h2>
+                <p class="category-description">
+                    Patents related to new product architectures, mechanical systems, and user-facing features 
+                    that enhance product performance and user experience.
+                </p>
+                
+                <div class="placeholder-note">
+                    <p><strong>📝 Content Note:</strong> Add a table or list of your Product Innovation patents here. Include patent numbers, titles, and dates.</p>
+                </div>
+
+                <table class="patents-table">
+                    <thead>
+                        <tr>
+                            <th>Patent Number</th>
+                            <th>Title</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>US XXXXXXX</td>
+                            <td>Example Patent Title - Product Innovation</td>
+                            <td>2024</td>
+                        </tr>
+                        <tr>
+                            <td>US XXXXXXX</td>
+                            <td>Example Patent Title - Product Innovation</td>
+                            <td>2023</td>
+                        </tr>
+                        <!-- Add your actual patents here -->
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="category-section">
+                <h2>Interface & Interaction Design</h2>
+                <p class="category-description">
+                    Patents covering user interfaces, digital interactions, and human-computer interface innovations 
+                    that improve usability and user engagement.
+                </p>
+                
+                <div class="placeholder-note">
+                    <p><strong>📝 Content Note:</strong> Add a table or list of your Interface & Interaction Design patents here.</p>
+                </div>
+
+                <table class="patents-table">
+                    <thead>
+                        <tr>
+                            <th>Patent Number</th>
+                            <th>Title</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>US XXXXXXX</td>
+                            <td>Example Patent Title - Interface Design</td>
+                            <td>2024</td>
+                        </tr>
+                        <!-- Add your actual patents here -->
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="category-section">
+                <h2>Packaging & Materials</h2>
+                <p class="category-description">
+                    Innovations in packaging design, material selection, and structural systems that enhance 
+                    brand presence, reduce costs, and improve sustainability.
+                </p>
+                
+                <div class="placeholder-note">
+                    <p><strong>📝 Content Note:</strong> Add a table or list of your Packaging & Materials patents here.</p>
+                </div>
+
+                <table class="patents-table">
+                    <thead>
+                        <tr>
+                            <th>Patent Number</th>
+                            <th>Title</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>US XXXXXXX</td>
+                            <td>Example Patent Title - Packaging Innovation</td>
+                            <td>2023</td>
+                        </tr>
+                        <!-- Add your actual patents here -->
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="category-section">
+                <h2>Manufacturing Process</h2>
+                <p class="category-description">
+                    Process innovations that improve manufacturing efficiency, reduce costs, and enable 
+                    new product capabilities through novel production methods.
+                </p>
+                
+                <div class="placeholder-note">
+                    <p><strong>📝 Content Note:</strong> Add a table or list of your Manufacturing Process patents here.</p>
+                </div>
+
+                <table class="patents-table">
+                    <thead>
+                        <tr>
+                            <th>Patent Number</th>
+                            <th>Title</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>US XXXXXXX</td>
+                            <td>Example Patent Title - Manufacturing Process</td>
+                            <td>2022</td>
+                        </tr>
+                        <!-- Add your actual patents here -->
+                    </tbody>
+                </table>
+            </section>
+
+            <section style="margin-top: 80px; padding: 40px; background: #f9f9f9; border-radius: 8px; text-align: center;">
+                <h2 style="margin-bottom: 20px;">Innovation Through Design</h2>
+                <p style="max-width: 700px; margin: 0 auto; font-size: 17px; line-height: 1.8; color: #555;">
+                    Each patent represents a commitment to solving real problems for real users. From concept 
+                    sketches to granted patents, these innovations demonstrate the power of design thinking 
+                    combined with technical execution and business acumen.
+                </p>
+            </section>
         </div>
     </main>
 
