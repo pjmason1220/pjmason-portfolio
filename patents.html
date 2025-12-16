@@ -33,7 +33,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 30px;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
         }
         
@@ -97,6 +97,24 @@
             transform: translateY(-2px);
         }
         
+        .patent-image {
+            width: 100%;
+            height: 200px;
+            background: #f5f5f5;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .patent-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
         .patent-number {
             font-size: 14px;
             color: #0066cc;
@@ -119,19 +137,15 @@
             border-radius: 20px;
             font-size: 13px;
             color: #666;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
+            margin-right: 10px;
         }
         
-        .patent-description {
-            font-size: 15px;
-            line-height: 1.7;
-            color: #555;
-            margin-bottom: 15px;
-        }
-        
-        .patent-date {
+        .patent-project {
             font-size: 14px;
             color: #999;
+            font-weight: 500;
+            margin-bottom: 10px;
         }
         
         .category-section {
@@ -153,56 +167,66 @@
             line-height: 1.7;
         }
         
-        .patents-table {
-            width: 100%;
-            border-collapse: collapse;
+        .category-stats {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .category-stat {
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .category-stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: #0066cc;
+            display: block;
+        }
+        
+        .category-stat-label {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .key-projects {
+            margin-top: 30px;
+        }
+        
+        .key-projects h3 {
+            font-size: 20px;
+            color: #222;
+            margin-bottom: 15px;
+        }
+        
+        .project-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .project-item {
             background: white;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            border-radius: 8px;
-            overflow: hidden;
+            padding: 15px 20px;
+            border-left: 3px solid #0066cc;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
         
-        .patents-table thead {
-            background: #f5f5f5;
-        }
-        
-        .patents-table th {
-            padding: 15px;
-            text-align: left;
+        .project-name {
             font-weight: 600;
             color: #222;
+            margin-bottom: 5px;
+        }
+        
+        .project-count {
             font-size: 14px;
-            border-bottom: 2px solid #e0e0e0;
-        }
-        
-        .patents-table td {
-            padding: 15px;
-            border-bottom: 1px solid #f0f0f0;
-            font-size: 14px;
-            color: #555;
-        }
-        
-        .patents-table tbody tr:hover {
-            background: #f9f9f9;
-        }
-        
-        .patents-table tbody tr:last-child td {
-            border-bottom: none;
-        }
-        
-        .placeholder-note {
-            background: #fff3cd;
-            border: 2px solid #ffc107;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 30px 0;
-            text-align: center;
-        }
-        
-        .placeholder-note p {
-            margin: 0;
-            color: #856404;
-            font-size: 15px;
+            color: #666;
         }
         
         /* Responsive */
@@ -215,13 +239,9 @@
                 grid-template-columns: 1fr;
             }
             
-            .patents-table {
-                font-size: 13px;
-            }
-            
-            .patents-table th,
-            .patents-table td {
-                padding: 10px;
+            .category-stats {
+                flex-direction: column;
+                gap: 20px;
             }
         }
     </style>
@@ -248,208 +268,315 @@
                 <p class="subtitle">
                     Over two decades of innovation spanning product design, interface development, 
                     packaging systems, and manufacturing processes. Each patent represents a solution 
-                    to real user needs and business challenges.
+                    to real user needs and business challenges across global markets.
                 </p>
                 <div class="patent-stats">
                     <div class="stat-card">
-                        <span class="stat-number">300+</span>
+                        <span class="stat-number">313</span>
                         <span class="stat-label">Total Patents</span>
                     </div>
                     <div class="stat-card">
-                        <span class="stat-number">20+</span>
-                        <span class="stat-label">Years of Innovation</span>
+                        <span class="stat-number">157</span>
+                        <span class="stat-label">Granted Patents</span>
                     </div>
                     <div class="stat-card">
-                        <span class="stat-number">4</span>
-                        <span class="stat-label">Core Categories</span>
+                        <span class="stat-number">210</span>
+                        <span class="stat-label">Design Patents</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">102</span>
+                        <span class="stat-label">Utility Patents</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Countries</span>
                     </div>
                 </div>
             </div>
 
             <p class="section-intro">
                 My patent portfolio reflects a comprehensive approach to design innovation—from reimagining 
-                user interactions to developing novel manufacturing processes. These inventions have contributed 
-                to hundreds of millions in commercial success while advancing the state of the art in consumer 
-                product design.
+                user interactions to developing novel manufacturing processes. These 313 inventions have 
+                contributed to hundreds of millions in commercial success while advancing the state of the 
+                art in consumer product design across Oral Care, Hair Care, and Feminine Care categories.
             </p>
 
             <section class="featured-patents">
-                <h2>Featured Patents</h2>
+                <h2>Featured Innovations</h2>
                 
-                <div class="placeholder-note">
-                    <p><strong>📝 Content Note:</strong> Add your top 10-15 hero patents here with descriptions, patent numbers, and dates. These should be your most impactful or award-winning inventions.</p>
-                </div>
-
                 <div class="patent-grid">
-                    <!-- Example Patent Card - Duplicate and customize -->
+                    <!-- Oral-B iO / Sonos Handle -->
                     <div class="patent-card">
-                        <div class="patent-number">US Patent #XXXXXXX</div>
-                        <h3 class="patent-title">Electric Toothbrush with Oscillating-Rotating Head</h3>
+                        <div class="patent-image">
+                            <img src="https://patentimages.storage.googleapis.com/6c/53/40/bde334695e94e6/USD0953038-20220531-D00000.png" alt="Oral-B Handle Design">
+                        </div>
+                        <div class="patent-project">PROJECT: Sonos Handle (Oral-B iO)</div>
+                        <div class="patent-number">US Design Patent USD953038S1</div>
+                        <h3 class="patent-title">Handle for Electric Toothbrush</h3>
+                        <span class="patent-category">Power Brush</span>
+                        <span class="patent-category">Product Design</span>
+                    </div>
+
+                    <!-- Sonos Galaxy / Oral-B iO -->
+                    <div class="patent-card">
+                        <div class="patent-image">
+                            <img src="https://patentimages.storage.googleapis.com/f0/d3/b4/9cbd941dc9315c/USD0930989-20210921-D00000.png" alt="Oral-B Galaxy Handle">
+                        </div>
+                        <div class="patent-project">PROJECT: Sonos Galaxy (Oral-B iO)</div>
+                        <div class="patent-number">US Design Patent USD930989S1</div>
+                        <h3 class="patent-title">Handle for Electric Toothbrush</h3>
+                        <span class="patent-category">Power Brush</span>
+                        <span class="patent-category">Product Design</span>
+                    </div>
+
+                    <!-- Packaging Innovation -->
+                    <div class="patent-card">
+                        <div class="patent-image">
+                            <img src="https://patentimages.storage.googleapis.com/b6/d8/8f/deb9deff19d7dd/USD0670164-20121106-D00000.png" alt="Packaging Closure">
+                        </div>
+                        <div class="patent-project">PROJECT: BC-707 MOBIUS</div>
+                        <div class="patent-number">US Design Patent USD670164S1</div>
+                        <h3 class="patent-title">Closure</h3>
+                        <span class="patent-category">Hair Care Packaging</span>
+                        <span class="patent-category">Manufacturing</span>
+                    </div>
+
+                    <!-- Dentifrice Dispenser -->
+                    <div class="patent-card">
+                        <div class="patent-image">
+                            <img src="https://patentimages.storage.googleapis.com/5b/d7/e8/cad8b481f76e82/USD0932304-20211005-D00000.png" alt="Dentifrice Dispenser">
+                        </div>
+                        <div class="patent-project">PROJECT: ADoC</div>
+                        <div class="patent-number">US Design Patent USD932304S1</div>
+                        <h3 class="patent-title">Dentifrice Dispenser</h3>
+                        <span class="patent-category">Oral Care</span>
                         <span class="patent-category">Product Innovation</span>
-                        <p class="patent-description">
-                            Revolutionary brushing mechanism that combines oscillating and rotating movements 
-                            for superior plaque removal. Core innovation behind Oral-B iO platform.
-                        </p>
-                        <div class="patent-date">Filed: 20XX | Granted: 20XX</div>
                     </div>
 
+                    <!-- D100 Electric Toothbrush -->
                     <div class="patent-card">
-                        <div class="patent-number">US Patent #XXXXXXX</div>
-                        <h3 class="patent-title">Smart Toothbrush with Real-time Feedback Display</h3>
-                        <span class="patent-category">Interface Design</span>
-                        <p class="patent-description">
-                            Interactive display system providing immediate brushing feedback to users, 
-                            integrating pressure sensors and motion tracking for optimal oral care.
-                        </p>
-                        <div class="patent-date">Filed: 20XX | Granted: 20XX</div>
+                        <div class="patent-image">
+                            <img src="https://patentimages.storage.googleapis.com/f0/9e/e2/9c7cf8cd9d66f8/USD0880870-20200407-D00000.png" alt="Electric Toothbrush Handle">
+                        </div>
+                        <div class="patent-project">PROJECT: D100</div>
+                        <div class="patent-number">US Design Patent USD880870S1</div>
+                        <h3 class="patent-title">Electric-toothbrush Handle</h3>
+                        <span class="patent-category">Power Brush</span>
+                        <span class="patent-category">Product Design</span>
                     </div>
 
+                    <!-- Packaging with Surface Ornamentation -->
                     <div class="patent-card">
-                        <div class="patent-number">US Patent #XXXXXXX</div>
-                        <h3 class="patent-title">Modular Packaging System with Interchangeable Components</h3>
-                        <span class="patent-category">Packaging & Materials</span>
-                        <p class="patent-description">
-                            Flexible packaging architecture enabling rapid brand customization while reducing 
-                            manufacturing complexity by 30% and time-to-market by 50%.
-                        </p>
-                        <div class="patent-date">Filed: 20XX | Granted: 20XX</div>
+                        <div class="patent-image">
+                            <img src="https://patentimages.storage.googleapis.com/c0/65/dd/46a26aadb4b609/USD0829542-20180925-D00000.png" alt="Packaging Design">
+                        </div>
+                        <div class="patent-project">PROJECT: GEMINI</div>
+                        <div class="patent-number">US Design Patent USD829542S1</div>
+                        <h3 class="patent-title">Packaging with Surface Ornamentation</h3>
+                        <span class="patent-category">Dentifrice</span>
+                        <span class="patent-category">Packaging Design</span>
                     </div>
 
-                    <!-- Add more patent cards as needed -->
+                    <!-- IRIS Bottle -->
+                    <div class="patent-card">
+                        <div class="patent-project">PROJECT: IRIS</div>
+                        <div class="patent-number">European Community Design 000989447-0001</div>
+                        <h3 class="patent-title">Bottle</h3>
+                        <span class="patent-category">Hair Care Packaging</span>
+                        <span class="patent-category">Product Design</span>
+                    </div>
+
+                    <!-- Feminine Care Innovation -->
+                    <div class="patent-card">
+                        <div class="patent-image">
+                            <img src="https://patentimages.storage.googleapis.com/d8/a5/2f/5e39c07e2b5b7f/USD0684262-20130611-D00000.png" alt="Sanitary Product">
+                        </div>
+                        <div class="patent-project">PROJECT: Lambada 2 Phase 2</div>
+                        <div class="patent-number">US Design Patent USD684262S1</div>
+                        <h3 class="patent-title">Sanitary Towel</h3>
+                        <span class="patent-category">Feminine Care</span>
+                        <span class="patent-category">Product Innovation</span>
+                    </div>
                 </div>
             </section>
 
             <section class="category-section">
-                <h2>Product Innovation</h2>
+                <h2>Oral Care Innovation</h2>
                 <p class="category-description">
-                    Patents related to new product architectures, mechanical systems, and user-facing features 
-                    that enhance product performance and user experience.
+                    Patents related to electric toothbrushes, dentifrice products, and oral care accessories. 
+                    These innovations span product design, user interfaces, and manufacturing processes that 
+                    have helped define the modern oral care experience, including the award-winning Oral-B iO platform.
                 </p>
                 
-                <div class="placeholder-note">
-                    <p><strong>📝 Content Note:</strong> Add a table or list of your Product Innovation patents here. Include patent numbers, titles, and dates.</p>
+                <div class="category-stats">
+                    <div class="category-stat">
+                        <span class="category-stat-number">113</span>
+                        <span class="category-stat-label">Oral Care Patents</span>
+                    </div>
+                    <div class="category-stat">
+                        <span class="category-stat-number">80</span>
+                        <span class="category-stat-label">Power Brush</span>
+                    </div>
+                    <div class="category-stat">
+                        <span class="category-stat-number">33</span>
+                        <span class="category-stat-label">Dentifrice</span>
+                    </div>
                 </div>
 
-                <table class="patents-table">
-                    <thead>
-                        <tr>
-                            <th>Patent Number</th>
-                            <th>Title</th>
-                            <th>Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>US XXXXXXX</td>
-                            <td>Example Patent Title - Product Innovation</td>
-                            <td>2024</td>
-                        </tr>
-                        <tr>
-                            <td>US XXXXXXX</td>
-                            <td>Example Patent Title - Product Innovation</td>
-                            <td>2023</td>
-                        </tr>
-                        <!-- Add your actual patents here -->
-                    </tbody>
-                </table>
+                <div class="key-projects">
+                    <h3>Key Oral Care Projects</h3>
+                    <div class="project-list">
+                        <div class="project-item">
+                            <div class="project-name">Sonos Handle (Oral-B iO)</div>
+                            <div class="project-count">51 patents globally</div>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-name">Sonos Galaxy</div>
+                            <div class="project-count">17 patents globally</div>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-name">ADoC (Dentifrice Innovation)</div>
+                            <div class="project-count">30 patents globally</div>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-name">Turing (Voice Assistant)</div>
+                            <div class="project-count">7 patents globally</div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <section class="category-section">
-                <h2>Interface & Interaction Design</h2>
-                <p class="category-description">
-                    Patents covering user interfaces, digital interactions, and human-computer interface innovations 
-                    that improve usability and user engagement.
-                </p>
-                
-                <div class="placeholder-note">
-                    <p><strong>📝 Content Note:</strong> Add a table or list of your Interface & Interaction Design patents here.</p>
-                </div>
-
-                <table class="patents-table">
-                    <thead>
-                        <tr>
-                            <th>Patent Number</th>
-                            <th>Title</th>
-                            <th>Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>US XXXXXXX</td>
-                            <td>Example Patent Title - Interface Design</td>
-                            <td>2024</td>
-                        </tr>
-                        <!-- Add your actual patents here -->
-                    </tbody>
-                </table>
-            </section>
-
-            <section class="category-section">
-                <h2>Packaging & Materials</h2>
+                <h2>Packaging & Manufacturing Innovation</h2>
                 <p class="category-description">
                     Innovations in packaging design, material selection, and structural systems that enhance 
-                    brand presence, reduce costs, and improve sustainability.
+                    brand presence, reduce costs, and improve sustainability. These inventions delivered 
+                    $55M+ in annual cost savings while reducing portfolio complexity by 30% and cutting 
+                    time-to-market by 50%.
                 </p>
                 
-                <div class="placeholder-note">
-                    <p><strong>📝 Content Note:</strong> Add a table or list of your Packaging & Materials patents here.</p>
+                <div class="category-stats">
+                    <div class="category-stat">
+                        <span class="category-stat-number">61</span>
+                        <span class="category-stat-label">Packaging Patents</span>
+                    </div>
+                    <div class="category-stat">
+                        <span class="category-stat-number">54</span>
+                        <span class="category-stat-label">Hair Care Packaging</span>
+                    </div>
+                    <div class="category-stat">
+                        <span class="category-stat-number">7</span>
+                        <span class="category-stat-label">Pkg West Systems</span>
+                    </div>
                 </div>
 
-                <table class="patents-table">
-                    <thead>
-                        <tr>
-                            <th>Patent Number</th>
-                            <th>Title</th>
-                            <th>Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>US XXXXXXX</td>
-                            <td>Example Patent Title - Packaging Innovation</td>
-                            <td>2023</td>
-                        </tr>
-                        <!-- Add your actual patents here -->
-                    </tbody>
-                </table>
+                <div class="key-projects">
+                    <h3>Major Packaging Projects</h3>
+                    <div class="project-list">
+                        <div class="project-item">
+                            <div class="project-name">BC-707 MOBIUS</div>
+                            <div class="project-count">54 patents globally</div>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-name">IRIS</div>
+                            <div class="project-count">7 patents globally</div>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-name">GEMINI</div>
+                            <div class="project-count">3 patents globally</div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <section class="category-section">
-                <h2>Manufacturing Process</h2>
+                <h2>Feminine Care Innovation</h2>
                 <p class="category-description">
-                    Process innovations that improve manufacturing efficiency, reduce costs, and enable 
-                    new product capabilities through novel production methods.
+                    Patents covering new product architectures and design innovations for the feminine care 
+                    category. This work includes the development of a new-to-world brand aimed at category 
+                    whitespace, representing one of the largest initiatives in Fem Care over a 10-year period.
                 </p>
                 
-                <div class="placeholder-note">
-                    <p><strong>📝 Content Note:</strong> Add a table or list of your Manufacturing Process patents here.</p>
+                <div class="category-stats">
+                    <div class="category-stat">
+                        <span class="category-stat-number">138</span>
+                        <span class="category-stat-label">Feminine Care Patents</span>
+                    </div>
+                    <div class="category-stat">
+                        <span class="category-stat-number">23</span>
+                        <span class="category-stat-label">Lambada 2 Phase 2</span>
+                    </div>
                 </div>
 
-                <table class="patents-table">
-                    <thead>
-                        <tr>
-                            <th>Patent Number</th>
-                            <th>Title</th>
-                            <th>Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>US XXXXXXX</td>
-                            <td>Example Patent Title - Manufacturing Process</td>
-                            <td>2022</td>
-                        </tr>
-                        <!-- Add your actual patents here -->
-                    </tbody>
-                </table>
+                <div class="key-projects">
+                    <h3>Major Feminine Care Projects</h3>
+                    <div class="project-list">
+                        <div class="project-item">
+                            <div class="project-name">Lambada 2 Phase 2</div>
+                            <div class="project-count">23 patents globally</div>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-name">Various Product Lines</div>
+                            <div class="project-count">115 additional patents</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="category-section">
+                <h2>Global Patent Portfolio</h2>
+                <p class="category-description">
+                    Patents filed and granted across major global markets, protecting innovations in 
+                    North America, Europe, Asia-Pacific, and Latin America.
+                </p>
+                
+                <div class="key-projects">
+                    <h3>Geographic Distribution (Top Markets)</h3>
+                    <div class="project-list">
+                        <div class="project-item">
+                            <div class="project-name">United Kingdom</div>
+                            <div class="project-count">57 patents</div>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-name">United States</div>
+                            <div class="project-count">48 patents</div>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-name">Japan</div>
+                            <div class="project-count">25 patents</div>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-name">Mexico</div>
+                            <div class="project-count">22 patents</div>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-name">Canada</div>
+                            <div class="project-count">20 patents</div>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-name">WIPO</div>
+                            <div class="project-count">20 patents</div>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-name">China</div>
+                            <div class="project-count">17 patents</div>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-name">European Community</div>
+                            <div class="project-count">17 patents</div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <section style="margin-top: 80px; padding: 40px; background: #f9f9f9; border-radius: 8px; text-align: center;">
                 <h2 style="margin-bottom: 20px;">Innovation Through Design</h2>
                 <p style="max-width: 700px; margin: 0 auto; font-size: 17px; line-height: 1.8; color: #555;">
-                    Each patent represents a commitment to solving real problems for real users. From concept 
-                    sketches to granted patents, these innovations demonstrate the power of design thinking 
-                    combined with technical execution and business acumen.
+                    Each of these 313 patents represents a commitment to solving real problems for real users. 
+                    From concept sketches to granted patents across 20+ countries, these innovations demonstrate 
+                    the power of design thinking combined with technical execution and business acumen. Together, 
+                    they've contributed to hundreds of millions in commercial value while advancing the state of 
+                    the art in consumer product design.
                 </p>
             </section>
         </div>
