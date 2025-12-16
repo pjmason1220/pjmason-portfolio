@@ -29,15 +29,20 @@
             line-height: 1.6;
         }
         
+        /* Fixed Statistics Layout */
         .patent-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1100px;
             margin: 0 auto;
         }
         
         .stat-card {
+            flex: 1 1 180px;
+            min-width: 180px;
+            max-width: 220px;
             background: white;
             padding: 30px;
             border-radius: 8px;
@@ -97,6 +102,7 @@
             transform: translateY(-2px);
         }
         
+        /* Fixed Patent Image Handling */
         .patent-image {
             width: 100%;
             height: 200px;
@@ -107,12 +113,25 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
         }
         
         .patent-image img {
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
+        }
+        
+        .patent-image.no-image {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d4e7f0 100%);
+        }
+        
+        .patent-image.no-image::before {
+            content: "Patent Design";
+            color: #0066cc;
+            font-size: 14px;
+            font-weight: 600;
+            opacity: 0.4;
         }
         
         .patent-number {
@@ -235,6 +254,14 @@
                 font-size: 36px;
             }
             
+            .patent-stats {
+                gap: 15px;
+            }
+            
+            .stat-card {
+                min-width: 150px;
+            }
+            
             .patent-grid {
                 grid-template-columns: 1fr;
             }
@@ -305,7 +332,7 @@
                 <h2>Featured Innovations</h2>
                 
                 <div class="patent-grid">
-                    <!-- Oral-B iO / Sonos Handle -->
+                    <!-- Oral-B iO / Sonos Handle - IMAGE WORKS -->
                     <div class="patent-card">
                         <div class="patent-image">
                             <img src="https://patentimages.storage.googleapis.com/6c/53/40/bde334695e94e6/USD0953038-20220531-D00000.png" alt="Oral-B Handle Design">
@@ -317,7 +344,7 @@
                         <span class="patent-category">Product Design</span>
                     </div>
 
-                    <!-- Sonos Galaxy / Oral-B iO -->
+                    <!-- Sonos Galaxy / Oral-B iO - IMAGE WORKS -->
                     <div class="patent-card">
                         <div class="patent-image">
                             <img src="https://patentimages.storage.googleapis.com/f0/d3/b4/9cbd941dc9315c/USD0930989-20210921-D00000.png" alt="Oral-B Galaxy Handle">
@@ -329,10 +356,22 @@
                         <span class="patent-category">Product Design</span>
                     </div>
 
+                    <!-- D100 Electric Toothbrush -->
+                    <div class="patent-card">
+                        <div class="patent-image no-image">
+                            <!-- Image placeholder -->
+                        </div>
+                        <div class="patent-project">PROJECT: D100</div>
+                        <div class="patent-number">US Design Patent USD880870S1</div>
+                        <h3 class="patent-title">Electric-toothbrush Handle</h3>
+                        <span class="patent-category">Power Brush</span>
+                        <span class="patent-category">Product Design</span>
+                    </div>
+
                     <!-- Packaging Innovation -->
                     <div class="patent-card">
-                        <div class="patent-image">
-                            <img src="https://patentimages.storage.googleapis.com/b6/d8/8f/deb9deff19d7dd/USD0670164-20121106-D00000.png" alt="Packaging Closure">
+                        <div class="patent-image no-image">
+                            <!-- Image placeholder -->
                         </div>
                         <div class="patent-project">PROJECT: BC-707 MOBIUS</div>
                         <div class="patent-number">US Design Patent USD670164S1</div>
@@ -343,8 +382,8 @@
 
                     <!-- Dentifrice Dispenser -->
                     <div class="patent-card">
-                        <div class="patent-image">
-                            <img src="https://patentimages.storage.googleapis.com/5b/d7/e8/cad8b481f76e82/USD0932304-20211005-D00000.png" alt="Dentifrice Dispenser">
+                        <div class="patent-image no-image">
+                            <!-- Image placeholder -->
                         </div>
                         <div class="patent-project">PROJECT: ADoC</div>
                         <div class="patent-number">US Design Patent USD932304S1</div>
@@ -353,22 +392,10 @@
                         <span class="patent-category">Product Innovation</span>
                     </div>
 
-                    <!-- D100 Electric Toothbrush -->
-                    <div class="patent-card">
-                        <div class="patent-image">
-                            <img src="https://patentimages.storage.googleapis.com/f0/9e/e2/9c7cf8cd9d66f8/USD0880870-20200407-D00000.png" alt="Electric Toothbrush Handle">
-                        </div>
-                        <div class="patent-project">PROJECT: D100</div>
-                        <div class="patent-number">US Design Patent USD880870S1</div>
-                        <h3 class="patent-title">Electric-toothbrush Handle</h3>
-                        <span class="patent-category">Power Brush</span>
-                        <span class="patent-category">Product Design</span>
-                    </div>
-
                     <!-- Packaging with Surface Ornamentation -->
                     <div class="patent-card">
-                        <div class="patent-image">
-                            <img src="https://patentimages.storage.googleapis.com/c0/65/dd/46a26aadb4b609/USD0829542-20180925-D00000.png" alt="Packaging Design">
+                        <div class="patent-image no-image">
+                            <!-- Image placeholder -->
                         </div>
                         <div class="patent-project">PROJECT: GEMINI</div>
                         <div class="patent-number">US Design Patent USD829542S1</div>
@@ -379,6 +406,9 @@
 
                     <!-- IRIS Bottle -->
                     <div class="patent-card">
+                        <div class="patent-image no-image">
+                            <!-- Image placeholder -->
+                        </div>
                         <div class="patent-project">PROJECT: IRIS</div>
                         <div class="patent-number">European Community Design 000989447-0001</div>
                         <h3 class="patent-title">Bottle</h3>
@@ -388,8 +418,8 @@
 
                     <!-- Feminine Care Innovation -->
                     <div class="patent-card">
-                        <div class="patent-image">
-                            <img src="https://patentimages.storage.googleapis.com/d8/a5/2f/5e39c07e2b5b7f/USD0684262-20130611-D00000.png" alt="Sanitary Product">
+                        <div class="patent-image no-image">
+                            <!-- Image placeholder -->
                         </div>
                         <div class="patent-project">PROJECT: Lambada 2 Phase 2</div>
                         <div class="patent-number">US Design Patent USD684262S1</div>
