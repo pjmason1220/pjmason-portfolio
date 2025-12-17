@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: iO Sense Smart Charging Base - PJ Mason</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Case Study Specific Styles */
+        .case-study-hero {
+            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+            color: white;
+            padding: 80px 0 60px;
+            margin-bottom: 60px;
+        }
+        
+        .case-study-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .case-study-hero .subtitle {
+            font-size: 22px;
+            opacity: 0.95;
+            max-width: 800px;
+            line-height: 1.6;
+        }
+        
+        .hero-meta {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .meta-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 8px;
+        }
+        
+        .meta-value {
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        .case-study-image {
+            width: 100%;
+            max-width: 1200px;
+            height: 500px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: -40px auto 60px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+        
+        .case-study-image.placeholder::before {
+            content: "Hero Product Image";
+            color: #0066cc;
+            font-size: 18px;
+            font-weight: 600;
+            opacity: 0.4;
+        }
+        
+        .case-study-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .section {
+            margin-bottom: 80px;
+        }
+        
+        .section h2 {
+            font-size: 36px;
+            color: #222;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        .section h3 {
+            font-size: 24px;
+            color: #222;
+            margin: 40px 0 20px;
+            font-weight: 600;
+        }
+        
+        .section p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        .highlight-box {
+            background: #f9f9f9;
+            border-left: 4px solid #0066cc;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+        
+        .highlight-box h4 {
+            font-size: 18px;
+            color: #222;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .highlight-box p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .stat-card {
+            background: #fff;
+            border: 2px solid #e0e0e0;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 42px;
+            font-weight: 700;
+            color: #0066cc;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .process-steps {
+            margin: 40px 0;
+        }
+        
+        .step {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            align-items: start;
+        }
+        
+        .step-number {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            background: #0066cc;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .step-content h4 {
+            font-size: 20px;
+            color: #222;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .step-content p {
+            margin: 0;
+        }
+        
+        .key-features {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .key-features li {
+            padding: 15px 0;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 16px;
+            color: #555;
+        }
+        
+        .key-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .key-features strong {
+            color: #222;
+            font-weight: 600;
+        }
+        
+        .awards-section {
+            background: #f9f9f9;
+            padding: 40px;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+        
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .award-card {
+            background: white;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 3px solid #0066cc;
+        }
+        
+        .award-card strong {
+            display: block;
+            color: #222;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        
+        .award-card p {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+        }
+        
+        .impact-callout {
+            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 8px;
+            margin: 60px 0;
+            text-align: center;
+        }
+        
+        .impact-callout h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .impact-callout p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+            color: white;
+            opacity: 0.95;
+        }
+        
+        .quote-block {
+            background: #f5f5f5;
+            padding: 40px;
+            border-left: 5px solid #0066cc;
+            margin: 40px 0;
+            font-style: italic;
+        }
+        
+        .quote-block p {
+            font-size: 20px;
+            color: #333;
+            margin: 0;
+        }
+        
+        .quote-author {
+            font-size: 16px;
+            color: #666;
+            margin-top: 15px;
+            font-style: normal;
+        }
+        
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .process-image {
+            width: 100%;
+            height: 250px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+        }
+        
+        .next-project {
+            text-align: center;
+            padding: 60px 0;
+            background: #f9f9f9;
+            border-radius: 8px;
+            margin-top: 80px;
+        }
+        
+        .next-project h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        .next-project a {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #0066cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        
+        .next-project a:hover {
+            background: #004499;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .case-study-hero h1 {
+                font-size: 36px;
+            }
+            
+            .case-study-image {
+                height: 300px;
+            }
+            
+            .section h2 {
+                font-size: 28px;
+            }
+            
+            .step {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">PJ Mason</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="patents.html">Patents</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="case-study-hero">
+        <div class="container">
+            <h1>iO Sense Smart Charging Base</h1>
+            <p class="subtitle">
+                Reimagining smart oral care by integrating AI-powered coaching directly into the charging 
+                base, eliminating friction and delivering real-time guidance for the best possible oral 
+                health outcomes.
+            </p>
+            <div class="hero-meta">
+                <div class="meta-item">
+                    <div class="meta-label">Role</div>
+                    <div class="meta-value">Design Lead</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Timeline</div>
+                    <div class="meta-value">2020 - 2022</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Team</div>
+                    <div class="meta-value">Design, Engineering, Marketing</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Category</div>
+                    <div class="meta-value">Product Design, UX, IoT</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="case-study-image placeholder">
+            <!-- Hero product image goes here -->
+        </div>
+    </div>
+
+    <main>
+        <div class="case-study-content">
+            <section class="section">
+                <h2>The Challenge</h2>
+                <p>
+                    Despite developing an award-winning Oral-B mobile app with sophisticated AI-powered 
+                    brushing guidance, we identified a critical friction point: consumers weren't using 
+                    it consistently. The reality of bringing your phone into the bathroom twice daily, 
+                    opening an app, and keeping it active during the entire brushing routine created 
+                    unnecessary barriers to getting the coaching they needed.
+                </p>
+                <p>
+                    Our vision was clear: create a Smart Oral Care Products portfolio that would deliver 
+                    coaching, guidance, and feedback seamlessly—helping consumers know they're getting 
+                    the best results for their time, money, and effort invested in their oral health.
+                </p>
+                
+                <div class="highlight-box">
+                    <h4>The Core Question</h4>
+                    <p>
+                        How simple could we make an interface that ensured consumers got the best 
+                        experience with the least friction on a twice-daily basis?
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>My Role & Approach</h2>
+                <p>
+                    As Design Lead on a three-person core team (alongside an Engineer and a Marketer), 
+                    I brought both my vision and the full capabilities of my Industrial and UX/UI Design 
+                    teams to bear on this challenge. My ownership spanned the critical early stages:
+                </p>
+                <ul class="key-features">
+                    <li><strong>Early Product Concept Creation:</strong> Defining the strategic direction and exploring opportunity spaces</li>
+                    <li><strong>Form Development:</strong> Translating abstract concepts into tangible product forms</li>
+                    <li><strong>Prototyping:</strong> Building functional prototypes to validate technical feasibility and user experience</li>
+                    <li><strong>Visualization:</strong> Creating assets for social media-based behavioral research to test concepts with real users</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>The Design Process</h2>
+                
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Exploration Phase</h4>
+                            <p>
+                                We began by exploring three distinct configurations for a smart charging 
+                                base, each with different approaches to delivering guidance and feedback. 
+                                This exploration phase was critical in understanding the solution space 
+                                and technical constraints.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Oral-B Guide Learning</h4>
+                            <p>
+                                We even launched an intermediate product—Oral-B Guide—that integrated 
+                                Amazon Alexa directly into the charging base. This bold experiment taught 
+                                us valuable lessons about complexity vs. simplicity, and what features 
+                                truly served the core use case versus what created additional friction.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Simplification & Focus</h4>
+                            <p>
+                                Drawing from our learnings, we returned to first principles: what's the 
+                                simplest possible interface that delivers maximum value? This led us to 
+                                the iO Sense concept—coaching integrated directly into the charging base 
+                                with an elegant LED guidance system and digital display.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Strategic Rationale</h4>
+                            <p>
+                                The charging base emerged as the optimal solution for four key reasons: 
+                                (1) easily viewable while brushing, (2) more cost-effective than a smart 
+                                mirror, (3) constantly powered to support the interface, and (4) already 
+                                part of the user's daily routine. It was hiding in plain sight.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-grid">
+                    <div class="process-image">Concept Sketches</div>
+                    <div class="process-image">Early Prototypes</div>
+                    <div class="process-image">User Testing</div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>The Innovation</h2>
+                <p>
+                    iO Sense represents a category first: the first time any power toothbrush brand had 
+                    built an AI-based position detection and brushing coach system into any interface—much 
+                    less one not on the brush itself. This breakthrough eliminated the need for phone 
+                    interaction entirely, providing real-time coaching on time, pressure, and coverage 
+                    directly via the charger.
+                </p>
+
+                <h3>Key Features</h3>
+                <ul class="key-features">
+                    <li><strong>6-Zone LED Guidance System:</strong> Visual representation of mouth zones with real-time coverage feedback</li>
+                    <li><strong>Built-in Digital Clock & Timer:</strong> Dual-purpose display showing time and 2-minute brushing countdown</li>
+                    <li><strong>Pressure Sensor Feedback:</strong> Direct visual indication when brushing too hard, too soft, or just right</li>
+                    <li><strong>AI Position Detection:</strong> Tracks brushing across all 3 tooth surfaces without requiring phone</li>
+                    <li><strong>3-Hour Fast Magnetic Charging:</strong> Secure magnetic connection with rapid recharge capability</li>
+                    <li><strong>App Sync Capability:</strong> Optional deeper insights for users who want detailed tracking</li>
+                </ul>
+
+                <div class="quote-block">
+                    <p>
+                        "How simple could we make an interface that ensured consumers got the best 
+                        experience with the least friction on a twice-daily basis?"
+                    </p>
+                    <div class="quote-author">— Design Philosophy, iO Sense Development Team</div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Business Impact</h2>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">$399</span>
+                        <span class="stat-label">Ultra-Premium Price Point Achieved</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">$100M</span>
+                        <span class="stat-label">Revenue Target First Year</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">30%</span>
+                        <span class="stat-label">Manual Users Switching (Germany)</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">4.5/5</span>
+                        <span class="stat-label">Stars (1000+ Amazon Reviews)</span>
+                    </div>
+                </div>
+
+                <p>
+                    The iO Sense enabled P&G Oral Care to reach an unprecedented $399 ultra-premium price 
+                    point while significantly differentiating our offering versus competition. This wasn't 
+                    just about premium pricing—it was about establishing a new category standard that 
+                    competitors would need to match.
+                </p>
+
+                <h3>Market Impact</h3>
+                <ul class="key-features">
+                    <li><strong>Market Growth:</strong> Accelerated demand in the premium electric toothbrush segment, driving overall market expansion</li>
+                    <li><strong>Competitive Edge:</strong> Solidified Oral-B's market dominance, achieving high market share and attracting users from manual brush categories</li>
+                    <li><strong>Tech Standard:</strong> Established a new benchmark for smart oral care with integrated coaching, pushing competitors to innovate</li>
+                    <li><strong>Digital Health Ecosystem:</strong> Expanded the connected oral health space by integrating data collection and personalized feedback</li>
+                    <li><strong>Professional Adoption:</strong> Partnered with 1,000+ dental offices for recommendations and education</li>
+                </ul>
+            </section>
+
+            <div class="impact-callout">
+                <h3>Category-Defining Innovation</h3>
+                <p>
+                    First power toothbrush brand to integrate AI-powered position detection and coaching 
+                    into a charging base, setting a new standard for frictionless smart oral care.
+                </p>
+            </div>
+
+            <section class="section">
+                <div class="awards-section">
+                    <h2>Awards & Recognition</h2>
+                    <div class="awards-grid">
+                        <div class="award-card">
+                            <strong>CES 2022 Innovation Award</strong>
+                            <p>Honored for innovative design and smart iO Sense technology that guides brushing</p>
+                        </div>
+                        <div class="award-card">
+                            <strong>iF Design Award</strong>
+                            <p>International recognition for design excellence and innovation</p>
+                        </div>
+                        <div class="award-card">
+                            <strong>2025 TechGearLab Best Premium</strong>
+                            <p>Recognized as "Best Premium Electric Toothbrush"</p>
+                        </div>
+                        <div class="award-card">
+                            <strong>2024 Wellness Awards</strong>
+                            <p>Awarded "Best Splurge Toothbrush" for comprehensive features</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Key Learnings</h2>
+                <p>
+                    This project reinforced several principles that guide my approach to design leadership:
+                </p>
+                
+                <div class="highlight-box">
+                    <h4>Simplicity Through Iteration</h4>
+                    <p>
+                        Sometimes the path to simplicity requires exploring complexity first. Oral-B Guide 
+                        taught us what features truly mattered versus what created friction.
+                    </p>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>Design for Daily Reality</h4>
+                    <p>
+                        The best technology disappears into routine. By integrating coaching into an 
+                        object already in the user's daily workflow, we removed barriers to adoption.
+                    </p>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>Strategic Constraints Drive Innovation</h4>
+                    <p>
+                        Choosing the charging base over a handle display or smart mirror wasn't just 
+                        cost-driven—it forced us to innovate within meaningful constraints, leading 
+                        to a more elegant solution.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Outcome</h2>
+                <p>
+                    The iO Sense Smart Charging Base achieved what we set out to do: eliminate friction 
+                    in smart oral care while delivering coaching that genuinely improves consumer outcomes. 
+                    By generating $100M+ in first-year revenue targets, achieving 30% conversion of manual 
+                    brush users in key markets, and establishing a new category benchmark, we proved that 
+                    thoughtful design leadership combined with strategic execution creates lasting business 
+                    value.
+                </p>
+                <p>
+                    More importantly, we created a product that consumers love—evidenced by 4.5/5 stars 
+                    across 1,000+ reviews and recognition from both industry awards and dental professionals 
+                    worldwide. This wasn't just about winning awards or hitting revenue targets; it was 
+                    about fundamentally improving how millions of people approach their oral health every day.
+                </p>
+            </section>
+
+            <div class="next-project">
+                <h3>View More Projects</h3>
+                <a href="portfolio.html">Back to Portfolio</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 PJ Mason. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
