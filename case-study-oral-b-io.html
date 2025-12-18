@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: Oral-B iO Electric Toothbrush - PJ Mason</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Case Study Specific Styles */
+        .case-study-hero {
+            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+            color: white;
+            padding: 80px 0 60px;
+            margin-bottom: 60px;
+        }
+        
+        .case-study-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .case-study-hero .subtitle {
+            font-size: 22px;
+            opacity: 0.95;
+            max-width: 800px;
+            line-height: 1.6;
+        }
+        
+        .hero-meta {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .meta-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 8px;
+        }
+        
+        .meta-value {
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        .case-study-image {
+            width: 100%;
+            max-width: 1200px;
+            height: 500px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: -40px auto 60px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+        
+        .case-study-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        .case-study-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .section {
+            margin-bottom: 80px;
+        }
+        
+        .section h2 {
+            font-size: 36px;
+            color: #222;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        .section h3 {
+            font-size: 24px;
+            color: #222;
+            margin: 40px 0 20px;
+            font-weight: 600;
+        }
+        
+        .section p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        .highlight-box {
+            background: #f9f9f9;
+            border-left: 4px solid #0066cc;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+        
+        .highlight-box h4 {
+            font-size: 18px;
+            color: #222;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .highlight-box p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .stat-card {
+            background: #fff;
+            border: 2px solid #e0e0e0;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 42px;
+            font-weight: 700;
+            color: #0066cc;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .process-steps {
+            margin: 40px 0;
+        }
+        
+        .step {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            align-items: start;
+        }
+        
+        .step-number {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            background: #0066cc;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .step-content h4 {
+            font-size: 20px;
+            color: #222;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .step-content p {
+            margin: 0;
+        }
+        
+        .key-features {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .key-features li {
+            padding: 15px 0;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 16px;
+            color: #555;
+        }
+        
+        .key-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .key-features strong {
+            color: #222;
+            font-weight: 600;
+        }
+        
+        .awards-section {
+            background: #f9f9f9;
+            padding: 40px;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+        
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .award-card {
+            background: white;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 3px solid #0066cc;
+        }
+        
+        .award-card strong {
+            display: block;
+            color: #222;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        
+        .award-card p {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+        }
+        
+        .impact-callout {
+            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 8px;
+            margin: 60px 0;
+            text-align: center;
+        }
+        
+        .impact-callout h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .impact-callout p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+            color: white;
+            opacity: 0.95;
+        }
+        
+        .quote-block {
+            background: #f5f5f5;
+            padding: 40px;
+            border-left: 5px solid #0066cc;
+            margin: 40px 0;
+            font-style: italic;
+        }
+        
+        .quote-block p {
+            font-size: 20px;
+            color: #333;
+            margin: 0;
+        }
+        
+        .quote-author {
+            font-size: 16px;
+            color: #666;
+            margin-top: 15px;
+            font-style: normal;
+        }
+        
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .process-image {
+            width: 100%;
+            height: 250px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+        }
+        
+        .next-project {
+            text-align: center;
+            padding: 60px 0;
+            background: #f9f9f9;
+            border-radius: 8px;
+            margin-top: 80px;
+        }
+        
+        .next-project h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        .next-project a {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #0066cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        
+        .next-project a:hover {
+            background: #004499;
+        }
+        
+        .innovation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .innovation-card {
+            background: white;
+            border: 2px solid #e8f4f8;
+            padding: 25px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .innovation-card:hover {
+            border-color: #0066cc;
+            box-shadow: 0 4px 15px rgba(0,102,204,0.1);
+        }
+        
+        .innovation-card h4 {
+            color: #0066cc;
+            font-size: 18px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        
+        .innovation-card p {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .case-study-hero h1 {
+                font-size: 36px;
+            }
+            
+            .case-study-image {
+                height: 300px;
+            }
+            
+            .section h2 {
+                font-size: 28px;
+            }
+            
+            .step {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">PJ Mason</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="patents.html">Patents</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="case-study-hero">
+        <div class="container">
+            <h1>Oral-B iO Electric Toothbrush</h1>
+            <p class="subtitle">
+                The biggest innovation in oral care history: Merging dentist-inspired technology 
+                with AI to transform brushing from a daily chore into a sensational experience 
+                that people actually want to do.
+            </p>
+            <div class="hero-meta">
+                <div class="meta-item">
+                    <div class="meta-label">Role</div>
+                    <div class="meta-value">Senior Director, Design</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Timeline</div>
+                    <div class="meta-value">2013 - 2020 (Launch)</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Location</div>
+                    <div class="meta-value">Kronberg, Germany & Cincinnati, OH</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Category</div>
+                    <div class="meta-value">Product Design, UX, Innovation</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="case-study-image">
+            <img src="images/iO9-4handles-image.png" alt="Oral-B iO Electric Toothbrush Platform">
+        </div>
+    </div>
+
+    <main>
+        <div class="case-study-content">
+            <section class="section">
+                <h2>The Challenge</h2>
+                <p>
+                    Despite Oral-B's leadership position in the power toothbrush category, we faced 
+                    mounting pressure from competitors like Philips Sonicare and increasingly 
+                    sophisticated Chinese private-label brands. More importantly, our deep consumer 
+                    research revealed critical pain points that were holding back the entire category:
+                </p>
+                
+                <ul class="key-features">
+                    <li><strong>Noise & Annoyance:</strong> Existing electric toothbrushes were loud and disruptive, creating an unpleasant twice-daily experience</li>
+                    <li><strong>Ergonomic Issues:</strong> Handles were larger than necessary, making them uncomfortable to hold and maneuver</li>
+                    <li><strong>Incomplete Clean:</strong> Consumers wanted—and deserved—a deeper, more effective, longer-lasting clean</li>
+                    <li><strong>Technique Sensitivity:</strong> Effectiveness depended heavily on proper technique, which many users struggled to master</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <h4>The Opportunity</h4>
+                    <p>
+                        We saw an opportunity to reimagine the entire category through breakthrough 
+                        technology that would deliver superior cleaning while making the experience 
+                        genuinely enjoyable—transforming brushing from something people had to do 
+                        into something they wanted to do.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>My Role & Commitment</h2>
+                <p>
+                    As Senior Director of Design, I led the comprehensive design strategy for what 
+                    would become Oral-B's most awarded and commercially successful product innovation. 
+                    My responsibilities spanned the full spectrum of design leadership:
+                </p>
+                <ul class="key-features">
+                    <li><strong>Design Strategy Development:</strong> Defining the overall design vision, approach, and execution plan</li>
+                    <li><strong>Shape Language & Form:</strong> Creating the distinctive iO aesthetic and ergonomic architecture</li>
+                    <li><strong>CMF Strategy:</strong> Color, material, and finish selection across the entire platform</li>
+                    <li><strong>Cross-Functional Leadership:</strong> Interfacing with marketing, R&D, and manufacturing teams globally</li>
+                    <li><strong>Team Building & Management:</strong> Leading and growing the Kronberg industrial design team to meet future category needs</li>
+                </ul>
+                
+                <div class="quote-block">
+                    <p>
+                        "In mid-2014, my family and I relocated to Kronberg, Germany on an expat 
+                        assignment to be co-located with the R&D and commercial teams. This wasn't 
+                        just about the project—it was about building the design capability and team 
+                        alignment that Oral Care needed for the next decade of innovation."
+                    </p>
+                </div>
+                
+                <p>
+                    For two years (2014-2016), I lived in Germany, leading our industrial design team 
+                    while working side-by-side with the product development, engineering, and commercial 
+                    teams. This deep collaboration was essential to bridging the gap between breakthrough 
+                    technology and compelling user experience.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2>The Design Process</h2>
+                
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Deep Consumer Understanding</h4>
+                            <p>
+                                We started with extensive consumer research—engaging over 6,000 people 
+                                to understand not just what they said they wanted, but their actual 
+                                behaviors, frustrations, and unmet needs. This revealed the jobs-to-be-done 
+                                framework that would guide our entire development: Make brushing effective, 
+                                enjoyable, and effortless.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Technology Partnership</h4>
+                        <p>
+                                Working closely with the product development team in Kronberg, we explored 
+                                how their breakthrough Linear Magnetic Drive technology could be translated 
+                                into a product that felt revolutionary in users' hands. The technology was 
+                                proven in the lab—my job was to make it sing in the bathroom.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Form, Function & Experience</h4>
+                            <p>
+                                I led the development of the iO's distinctive shape language—creating a 
+                                slimmer, more ergonomic form that felt natural in the hand while housing 
+                                sophisticated technology. Every detail mattered: the interactive display, 
+                                the pressure sensor ring, the premium materials, the satisfying magnetic 
+                                charging connection.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Rigorous Validation</h4>
+                            <p>
+                                Over six years of development, we conducted extensive clinical trials 
+                                (43,000+ trial days) validating not just cleaning efficacy but the 
+                                complete user experience. We refined, tested, and perfected until we 
+                                had something truly extraordinary.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="impact-callout">
+                <h3>The Breakthrough: Linear Magnetic Drive</h3>
+                <p>
+                    Replacing traditional friction-based motors with a frictionless magnetic drive system 
+                    that delivers focused energy directly to bristle tips—resulting in a quieter, smoother, 
+                    more effective clean with zero wasted energy.
+                </p>
+            </div>
+
+            <section class="section">
+                <h2>Key Innovations</h2>
+                <p>
+                    The Oral-B iO platform represents a complete reimagining of the electric toothbrush 
+                    through five interconnected innovations:
+                </p>
+
+                <div class="innovation-grid">
+                    <div class="innovation-card">
+                        <h4>Linear Magnetic Drive</h4>
+                        <p>
+                            Replaces traditional friction motors with a frictionless magnetic system. 
+                            Energy goes directly to bristle tips—not wasted in noise, vibration, or 
+                            heat—for a whisper-quiet, ultra-smooth brushing experience.
+                        </p>
+                    </div>
+
+                    <div class="innovation-card">
+                        <h4>Micro-Vibrating Bristles</h4>
+                        <p>
+                            Revolutionary brush head combines Oral-B's signature oscillating-rotating 
+                            motion with gentle micro-vibrations. Unique tuft-in-tuft bristle design 
+                            reaches deeper between teeth for superior plaque removal.
+                        </p>
+                    </div>
+
+                    <div class="innovation-card">
+                        <h4>Smart Pressure Sensor</h4>
+                        <p>
+                            Intelligent guidance system displays green when pressure is optimal, red 
+                            when too hard. Automatically adjusts brush speed to protect gums and enamel 
+                            while ensuring effective cleaning.
+                        </p>
+                    </div>
+
+                    <div class="innovation-card">
+                        <h4>AI Position Detection</h4>
+                        <p>
+                            3D tracking technology monitors brushing across all surfaces of your teeth. 
+                            AI-powered coaching ensures comprehensive coverage and identifies missed 
+                            zones for a truly complete clean.
+                        </p>
+                    </div>
+
+                    <div class="innovation-card">
+                        <h4>Interactive Experience</h4>
+                        <p>
+                            Intuitive OLED display provides real-time feedback, mode selection, and 
+                            motivating celebration (like a smiley face) when you finish. App integration 
+                            offers deeper insights and personalized coaching.
+                        </p>
+                    </div>
+
+                    <div class="innovation-card">
+                        <h4>Premium Design</h4>
+                        <p>
+                            Slimmer profile, sophisticated CMF strategy, and thoughtful ergonomics 
+                            create a product that looks as premium as it performs. Magnetic charging 
+                            base provides satisfying connection and rapid recharge.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>Clinical Validation</h4>
+                    <p>
+                        <strong>Clinically proven results:</strong> 100% cleaner teeth and healthier 
+                        gums in one week vs. manual brushing. 6X more plaque removal at the gumline. 
+                        Significant improvement in gingivitis. These aren't marketing claims—they're 
+                        proven outcomes from rigorous clinical testing.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Business Impact</h2>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">$0→100M+</span>
+                        <span class="stat-label">Revenue Growth in Under 5 Years</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">6,000+</span>
+                        <span class="stat-label">Consumers in Development Research</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">43,000+</span>
+                        <span class="stat-label">Clinical Trial Days</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">6-7 Years</span>
+                        <span class="stat-label">R&D Investment to Launch</span>
+                    </div>
+                </div>
+
+                <p>
+                    The Oral-B iO transformed from concept to category leader, generating hundreds of 
+                    millions in revenue while capturing market share across every region where we sell. 
+                    But the impact goes beyond financials:
+                </p>
+
+                <ul class="key-features">
+                    <li><strong>Market Leadership:</strong> Gained significant market share in all regions, establishing new premium category standards</li>
+                    <li><strong>Professional Adoption:</strong> Became the favorite among dentists worldwide, with strong clinical evidence supporting recommendations</li>
+                    <li><strong>User Transformation:</strong> Changed how millions of people approach oral care—making brushing something they want to do</li>
+                    <li><strong>Competitive Response:</strong> Forced competitors to completely rethink their product strategies and technology investments</li>
+                    <li><strong>Category Expansion:</strong> Grew the premium electric toothbrush segment, attracting users from manual brushing</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <div class="awards-section">
+                    <h2>Awards & Recognition</h2>
+                    <p>
+                        The most awarded electric toothbrush in Oral-B history, recognized for both 
+                        design excellence and technological innovation:
+                    </p>
+                    <div class="awards-grid">
+                        <div class="award-card">
+                            <strong>German Design Award - Gold</strong>
+                            <p>Highest honor for design excellence and innovation impact</p>
+                        </div>
+                        <div class="award-card">
+                            <strong>iF Design Award</strong>
+                            <p>International recognition for outstanding design quality</p>
+                        </div>
+                        <div class="award-card">
+                            <strong>Red Dot Design Award</strong>
+                            <p>Prestigious acknowledgment of design achievement</p>
+                        </div>
+                        <div class="award-card">
+                            <strong>CES Innovation Award</strong>
+                            <p>Recognized as breakthrough consumer electronics innovation</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Key Learnings</h2>
+                
+                <div class="highlight-box">
+                    <h4>Co-Location Accelerates Innovation</h4>
+                    <p>
+                        Relocating to Germany to work alongside the R&D and commercial teams wasn't 
+                        just convenient—it was essential. The daily collaboration, rapid iteration, 
+                        and shared problem-solving accelerated development and ensured technology and 
+                        design evolved together rather than in sequence.
+                    </p>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>Deep Consumer Understanding Drives Breakthrough</h4>
+                    <p>
+                        Engaging 6,000+ consumers wasn't about validating predetermined solutions—it 
+                        was about truly understanding the job-to-be-done. This deep empathy guided 
+                        every design decision and ensured we were solving real problems, not imagined ones.
+                    </p>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>Technology + Design = Experience</h4>
+                    <p>
+                        The Linear Magnetic Drive was revolutionary technology, but technology alone 
+                        doesn't win. The iO succeeded because we transformed that technology into a 
+                        complete sensorial experience—from the whisper-quiet operation to the satisfying 
+                        magnetic connection to the celebratory smiley face. Every touchpoint mattered.
+                    </p>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>Patience With Purpose</h4>
+                    <p>
+                        Six years from start to launch is a long development cycle. But we never 
+                        compromised on getting it right. The extensive clinical validation (43,000+ 
+                        trial days) and iterative refinement ensured we launched something truly 
+                        exceptional rather than merely new.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Outcome</h2>
+                <p>
+                    The Oral-B iO represents the most successful innovation in Oral-B's history—and 
+                    one of the most impactful projects of my career. By leading the design strategy 
+                    through six years of development, relocating my family to Germany to embed with 
+                    the team, and driving alignment across global design, engineering, and commercial 
+                    organizations, we created something that fundamentally transformed the category.
+                </p>
+                <p>
+                    Growing from zero to hundreds of millions in revenue in under five years while 
+                    earning every major design award demonstrates what's possible when breakthrough 
+                    technology meets thoughtful design leadership and deep user empathy. More importantly, 
+                    we created a product that genuinely improves people's lives—clinically proven healthier 
+                    gums, more effective cleaning, and an experience people actually enjoy twice daily.
+                </p>
+                <p>
+                    The iO platform continues to drive Oral-B's premium positioning and has established 
+                    new category standards that competitors are still working to match. This wasn't just 
+                    about designing a better toothbrush—it was about reimagining what oral care could be.
+                </p>
+            </section>
+
+            <div class="next-project">
+                <h3>View More Projects</h3>
+                <a href="portfolio.html">Back to Portfolio</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 PJ Mason. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
