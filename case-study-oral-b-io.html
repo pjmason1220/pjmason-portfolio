@@ -299,11 +299,14 @@
             height: 250px;
             background: #f0f0f0;
             border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-            font-size: 14px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .process-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         .next-project {
@@ -557,6 +560,28 @@
                                 had something truly extraordinary.
                             </p>
                         </div>
+                    </div>
+                </div>
+                
+                <h3>Design Development Journey</h3>
+                <p>
+                    From initial concept sketches to final production, the iO development journey 
+                    showcased iterative refinement and collaboration across industrial design, 
+                    engineering, and manufacturing:
+                </p>
+                
+                <div class="image-grid">
+                    <div class="process-image">
+                        <img src="images/io-sketch.png" alt="Oral-B iO Early Concept Sketches" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
+                    <div class="process-image">
+                        <img src="images/io-prototyping.png" alt="Oral-B iO Prototyping Progress" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
+                    <div class="process-image">
+                        <img src="images/io-cad-model.png" alt="Oral-B iO CAD Model" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
+                    <div class="process-image">
+                        <img src="images/io-rendering.png" alt="Oral-B iO Final Rendering" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
                     </div>
                 </div>
             </section>
