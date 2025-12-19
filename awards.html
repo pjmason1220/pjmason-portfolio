@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awards - PJ Mason</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Awards Page Specific Styles */
+        .awards-hero {
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 8px;
+            margin-bottom: 60px;
+        }
+        
+        .awards-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #222;
+        }
+        
+        .awards-hero .subtitle {
+            font-size: 20px;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+        
+        .award-stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .stat-card {
+            flex: 1 1 180px;
+            min-width: 180px;
+            max-width: 220px;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #0066cc;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 16px;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .section-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .featured-awards {
+            margin-bottom: 80px;
+        }
+        
+        .featured-awards h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+        }
+        
+        .award-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .award-card {
+            background: #fff;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 30px;
+            transition: all 0.3s;
+        }
+        
+        .award-card:hover {
+            border-color: #0066cc;
+            box-shadow: 0 4px 20px rgba(0,102,204,0.1);
+            transform: translateY(-2px);
+        }
+        
+        .award-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #e8f4f8;
+            color: #0066cc;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .award-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        
+        .award-product {
+            font-size: 16px;
+            color: #0066cc;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .award-year {
+            font-size: 14px;
+            color: #999;
+            font-weight: 500;
+        }
+        
+        .award-level {
+            display: inline-block;
+            padding: 4px 10px;
+            background: #ffd700;
+            color: #222;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        .award-level.gold {
+            background: #ffd700;
+        }
+        
+        .award-level.winner {
+            background: #4CAF50;
+            color: white;
+        }
+        
+        .award-level.special {
+            background: #9C27B0;
+            color: white;
+        }
+        
+        .timeline-section {
+            margin-bottom: 80px;
+        }
+        
+        .timeline-section h2 {
+            font-size: 32px;
+            color: #222;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #0066cc;
+        }
+        
+        .year-group {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+        
+        .year-header {
+            font-size: 28px;
+            font-weight: 700;
+            color: #0066cc;
+            margin-bottom: 20px;
+        }
+        
+        .award-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .award-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .award-item:last-child {
+            border-bottom: none;
+        }
+        
+        .award-item strong {
+            display: block;
+            color: #222;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .award-item span {
+            font-size: 15px;
+            color: #666;
+        }
+        
+        .category-section {
+            margin-bottom: 60px;
+        }
+        
+        .category-section h2 {
+            font-size: 32px;
+            color: #222;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #0066cc;
+        }
+        
+        .awards-by-type {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .type-card {
+            background: white;
+            border: 2px solid #e8f4f8;
+            padding: 25px;
+            border-radius: 8px;
+        }
+        
+        .type-card h3 {
+            color: #0066cc;
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .type-card p {
+            font-size: 32px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 5px;
+        }
+        
+        .type-card span {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .awards-hero h1 {
+                font-size: 36px;
+            }
+            
+            .award-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .award-stats {
+                gap: 15px;
+            }
+            
+            .stat-card {
+                min-width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">PJ Mason</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="patents.html">Patents</a></li>
+                <li><a href="awards.html" class="active">Awards</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="awards-hero">
+                <h1>Awards & Recognition</h1>
+                <p class="subtitle">
+                    A decade of design excellence recognized by the world's most prestigious design 
+                    competitions. From German Design Awards to Red Dot, iF Awards to CES Innovation 
+                    Awards, these honors reflect a consistent commitment to creating products that 
+                    combine innovation, usability, and aesthetic excellence.
+                </p>
+                <div class="award-stats">
+                    <div class="stat-card">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Total Awards</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">10</span>
+                        <span class="stat-label">Years (2016-2025)</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">8</span>
+                        <span class="stat-label">Award Programs</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Gold & Winner Awards</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="section-intro">
+                These awards represent recognition from juries of design professionals, industry experts, 
+                and innovation leaders across multiple disciplines. Each honor validates our approach: 
+                deep user empathy combined with breakthrough technology, executed with meticulous attention 
+                to form, function, and experience.
+            </p>
+
+            <section class="featured-awards">
+                <h2>Signature Awards</h2>
+                
+                <div class="award-grid">
+                    <!-- German Design Award Gold - iO Series 10 -->
+                    <div class="award-card">
+                        <span class="award-badge">German Design Award</span>
+                        <h3 class="award-title">Oral-B iO Series 10</h3>
+                        <p class="award-product">iO Series 10 Electric Toothbrush</p>
+                        <p class="award-year">2023</p>
+                        <span class="award-level gold">Gold</span>
+                    </div>
+
+                    <!-- CES Innovation Award -->
+                    <div class="award-card">
+                        <span class="award-badge">CES Innovation Awards</span>
+                        <h3 class="award-title">Oral-B iO 10</h3>
+                        <p class="award-product">iO 10 with iO Sense Technology</p>
+                        <p class="award-year">2022</p>
+                        <span class="award-level winner">Honoree</span>
+                    </div>
+
+                    <!-- German Design Award - Oral-B iO -->
+                    <div class="award-card">
+                        <span class="award-badge">German Design Award</span>
+                        <h3 class="award-title">Oral-B iO</h3>
+                        <p class="award-product">Revolutionary iO Platform</p>
+                        <p class="award-year">2021</p>
+                        <span class="award-level winner">Winner</span>
+                    </div>
+
+                    <!-- Red Dot - Oral-B iO -->
+                    <div class="award-card">
+                        <span class="award-badge">Red Dot Award</span>
+                        <h3 class="award-title">Oral-B iO</h3>
+                        <p class="award-product">iO Electric Toothbrush Platform</p>
+                        <p class="award-year">2020</p>
+                        <span class="award-level winner">Winner</span>
+                    </div>
+
+                    <!-- iF Design Award - Oral-B CLIC -->
+                    <div class="award-card">
+                        <span class="award-badge">iF Design Award</span>
+                        <h3 class="award-title">Oral-B CLIC</h3>
+                        <p class="award-product">Sustainable Toothbrush Design</p>
+                        <p class="award-year">2020</p>
+                        <span class="award-level winner">Winner</span>
+                    </div>
+
+                    <!-- German Design Award - Oral-B CLIC -->
+                    <div class="award-card">
+                        <span class="award-badge">German Design Award</span>
+                        <h3 class="award-title">Oral-B CLIC</h3>
+                        <p class="award-product">Innovative Sustainable Design</p>
+                        <p class="award-year">2020</p>
+                        <span class="award-level winner">Winner</span>
+                    </div>
+
+                    <!-- Red Dot - Oral-B CLIC -->
+                    <div class="award-card">
+                        <span class="award-badge">Red Dot Award</span>
+                        <h3 class="award-title">Oral-B CLIC</h3>
+                        <p class="award-product">Sustainable Electric Toothbrush</p>
+                        <p class="award-year">2019</p>
+                        <span class="award-level winner">Winner</span>
+                    </div>
+
+                    <!-- iF Award - Oral-B Pulsonic Slim Luxe -->
+                    <div class="award-card">
+                        <span class="award-badge">iF Design Award</span>
+                        <h3 class="award-title">Oral-B Pulsonic Slim Luxe</h3>
+                        <p class="award-product">Premium Sonic Toothbrush</p>
+                        <p class="award-year">2019</p>
+                        <span class="award-level winner">Winner</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="category-section">
+                <h2>Awards by Program</h2>
+                
+                <div class="awards-by-type">
+                    <div class="type-card">
+                        <h3>German Design Award</h3>
+                        <p>15+</p>
+                        <span>Awards (2017-2025)</span>
+                    </div>
+                    
+                    <div class="type-card">
+                        <h3>iF Design Award</h3>
+                        <p>8+</p>
+                        <span>Awards (2019-2025)</span>
+                    </div>
+                    
+                    <div class="type-card">
+                        <h3>Red Dot Award</h3>
+                        <p>7+</p>
+                        <span>Awards (2019-2025)</span>
+                    </div>
+                    
+                    <div class="type-card">
+                        <h3>Good Design Award</h3>
+                        <p>10+</p>
+                        <span>Awards (2016-2024)</span>
+                    </div>
+                    
+                    <div class="type-card">
+                        <h3>CES Innovation</h3>
+                        <p>2</p>
+                        <span>Honoree Awards</span>
+                    </div>
+                    
+                    <div class="type-card">
+                        <h3>Fast Company</h3>
+                        <p>1</p>
+                        <span>Innovation By Design</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="timeline-section">
+                <h2>Awards Timeline (2016-2025)</h2>
+
+                <!-- 2025 -->
+                <div class="year-group">
+                    <h3 class="year-header">2025</h3>
+                    <ul class="award-list">
+                        <li class="award-item">
+                            <strong>German Design Award 2025</strong>
+                            <span>iO Series 2</span>
+                        </li>
+                        <li class="award-item">
+                            <strong>iF Award 2025</strong>
+                            <span>iO Series 2</span>
+                        </li>
+                        <li class="award-item">
+                            <strong>Red Dot 2025</strong>
+                            <span>iO Series 2</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 2024 -->
+                <div class="year-group">
+                    <h3 class="year-header">2024</h3>
+                    <ul class="award-list">
+                        <li class="award-item">
+                            <strong>Good Design Award USA 2024</strong>
+                            <span>Oral-B iO Series 2</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 2023 -->
+                <div class="year-group">
+                    <h3 class="year-header">2023</h3>
+                    <ul class="award-list">
+                        <li class="award-item">
+                            <strong>German Design Award 2023 (Gold)</strong>
+                            <span>Oral-B iO Series 10</span>
+                        </li>
+                        <li class="award-item">
+                            <strong>German Design Award 2023 (Winner)</strong>
+                            <span>Oral-B iO Series 5</span>
+                        </li>
+                        <li class="award-item">
+                            <strong>German Design Award 2023 (Winner)</strong>
+                            <span>Oral-B CLIC M3</span>
+                        </li>
+                        <li class="award-item">
+                            <strong>German Design Award 2023 (Winner)</strong>
+                            <span>Oral-B Brilliance</span>
+                        </li>
+                        <li class="award-item">
+                            <strong>Good Design Award USA 2023 (Winner)</strong>
+                            <span>Oral-B iO Series 10</span>
+                        </li>
+                        <li class="award-item">
+                            <strong>Good Design Award USA 2023 (Winner)</strong>
+                            <span>Oral-B iO Series 5</span>
+                        </li>
+                        <li class="award-item">
+                            <strong>iF Award 2023</strong>
+                            <span>Oral-B Clic, iO Series 10, iO Series 5</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 2022 -->
+                <div class="year-group">
+                    <h3 class="year-header">2022</h3>
+                    <ul class="award-list">
+                        <li class="award-item">
+                            <strong>CES 2022 Innovation Awards Honoree</strong>
+                            <span>Oral-B iO 10</span>
+                        </li>
+                        <li class="award-item">
+                            <strong>German Design Award 2022 (Special Mention)</strong>
+                            <span>Oral-B Pro</span>
+                        </li>
+                        <li class="award-item">
+                            <strong>Good Design Award USA 2022</strong>
+                            <span>Oral-B Brilliance</span>
+                        </li>
+                        <li class="award-item">
+                            <strong>Good Design Award USA 2021</strong>
+                            <span>Oral-B Pro</span>
+                        </li>
+                        <li class="award-item">
+                            <strong>Red Dot 2022</strong>
+                            <span>Oral-B iO Series 5</span>
+                        </li>
+                        <li class="award-item">
+                            <strong>iF Award 2022</strong>
+                            <span>Oral-B iO</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 2021 -->
+                <div class="year-group">
+                    <h3 class="year-header">2021</h3>
+                    <ul class="award-list">
+                        <li class="award-item">
+                            <strong>German Design Award 2021 (Winner)</strong>
+                            <span>Oral-B iO</span>
+                        </li>
+                        <li class="award-item">
+                            <strong>Good Design Award USA 2020</strong>
+                            <span>Oral-B iO</span>
+                        </li>
+                        <li class="award-item">
+                            <strong>Red Dot 2021</strong>
+                            <span>Oral-B Pulsonic Slim Clean, Oral-B Pulsonic Slim Luxe</span>
+                        </li>
+                        <li class="award-item">
+                            <strong>TechRadar Choice Award 2021</strong>
+                            <span>Oral-B iO 9</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 2020 -->
+                <div class="year-group">
+                    <h3 class="year-header">2020</h3>
+                    <ul class="award-list">
+                        <li class="award-item">
+                            <strong>German Design Award 2020 (Winner)</strong>
+                            <span>Oral-B CLIC</span>
+                        </li>
+                        <li class="award-item">
+                            <strong>Good Design Award USA 2019</strong>
+                            <span>Oral-B CLIC</span>
+                        </li>
+                        <li class="award-item">
+                            <strong>iF Award 2020</strong>
+                            <span>Oral-B CLIC</span>
+                        </li>
+                        <li class="award-item">
+                            <strong>Red Dot 2020</strong>
+                            <span>Oral-B iO</span>
+                        </li>
+                        <li class="award-item">
+                            <strong>Fast Company Innovation By Design Awards 2020 (Honorable Mention)</strong>
+                            <span>Oral-B CLIC - Best Design EMEA and Sustainability</span>
+                        </li>
+                        <li class="award-item">
+                            <strong>IDEA 2020 (Finalist)</strong>
+                            <span>Oral-B Clic, Oral-B iO</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 2019 -->
+                <div class="year-group">
+                    <h3 class="year-header">2019</h3>
+                    <ul class="award-list">
+                        <li class="award-item">
+                            <strong>German Design Award 2019 (Winner)</strong>
+                            <span>Oral-B Pulsonic Slim Luxe</span>
+                        </li>
+                        <li class="award-item">
+                            <strong>German Design Award 2019 (Special Mention)</strong>
+                            <span>Oral-B Vitality 100</span>
+                        </li>
+                        <li class="award-item">
+                            <strong>German Design Award 2019 (Winner)</strong>
+                            <span>Oral-B Genius 9000 Rose Gold</span>
+                        </li>
+                        <li class="award-item">
+                            <strong>iF Award 2019</strong>
+                            <span>Oral-B Pulsonic Slim Luxe, Oral-B Vitality 100</span>
+                        </li>
+                        <li class="award-item">
+                            <strong>Red Dot 2019</strong>
+                            <span>Oral-B CLIC, Oral-B Pulsonic Slim Luxe</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 2017 -->
+                <div class="year-group">
+                    <h3 class="year-header">2017</h3>
+                    <ul class="award-list">
+                        <li class="award-item">
+                            <strong>German Design Award 2017 (Special Mention)</strong>
+                            <span>Oral-B Genius 9000</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 2016 -->
+                <div class="year-group">
+                    <h3 class="year-header">2016</h3>
+                    <ul class="award-list">
+                        <li class="award-item">
+                            <strong>Good Design Award USA 2016</strong>
+                            <span>Oral-B Genius 9000</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section style="margin-top: 80px; padding: 40px; background: #f9f9f9; border-radius: 8px; text-align: center;">
+                <h2 style="margin-bottom: 20px;">Design Excellence Through Consistency</h2>
+                <p style="max-width: 700px; margin: 0 auto; font-size: 17px; line-height: 1.8; color: #555;">
+                    These 50+ awards across 10 years represent more than recognition—they validate our 
+                    commitment to creating products that meaningfully improve people's lives while advancing 
+                    the state of design excellence in the consumer products industry.
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 PJ Mason. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
