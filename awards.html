@@ -101,6 +101,13 @@
             transform: translateY(-2px);
         }
         
+        .award-logo {
+            height: 40px;
+            width: auto;
+            margin-bottom: 15px;
+            object-fit: contain;
+        }
+        
         .award-badge {
             display: inline-block;
             padding: 8px 16px;
@@ -118,6 +125,17 @@
             color: #222;
             margin-bottom: 15px;
             line-height: 1.4;
+        }
+        
+        .award-title a {
+            color: #222;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .award-title a:hover {
+            color: #0066cc;
+            text-decoration: underline;
         }
         
         .award-product {
@@ -192,17 +210,37 @@
         .award-item {
             padding: 15px 0;
             border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
         
         .award-item:last-child {
             border-bottom: none;
         }
         
+        .inline-award-logo {
+            height: 24px;
+            width: auto;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+        
         .award-item strong {
-            display: block;
             color: #222;
             font-size: 16px;
             margin-bottom: 5px;
+        }
+        
+        .award-item strong a {
+            color: #222;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .award-item strong a:hover {
+            color: #0066cc;
+            text-decoration: underline;
         }
         
         .award-item span {
@@ -234,6 +272,14 @@
             border: 2px solid #e8f4f8;
             padding: 25px;
             border-radius: 8px;
+            text-align: center;
+        }
+        
+        .type-card img {
+            height: 50px;
+            width: auto;
+            margin: 0 auto 15px;
+            object-fit: contain;
         }
         
         .type-card h3 {
@@ -241,6 +287,17 @@
             font-size: 20px;
             margin-bottom: 15px;
             font-weight: 600;
+        }
+        
+        .type-card h3 a {
+            color: #0066cc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .type-card h3 a:hover {
+            color: #004499;
+            text-decoration: underline;
         }
         
         .type-card p {
@@ -334,8 +391,11 @@
                 <div class="award-grid">
                     <!-- German Design Award Gold - iO Series 10 -->
                     <div class="award-card">
+                        <img src="images/awards/german-design-award-logo.png" alt="German Design Award" class="award-logo">
                         <span class="award-badge">German Design Award</span>
-                        <h3 class="award-title">Oral-B iO Series 10</h3>
+                        <h3 class="award-title">
+                            <a href="https://www.german-design-award.com/en" target="_blank" rel="noopener noreferrer">Oral-B iO Series 10</a>
+                        </h3>
                         <p class="award-product">iO Series 10 Electric Toothbrush</p>
                         <p class="award-year">2023</p>
                         <span class="award-level gold">Gold</span>
@@ -343,8 +403,11 @@
 
                     <!-- CES Innovation Award -->
                     <div class="award-card">
+                        <img src="images/awards/ces-innovation-awards-logo.png" alt="CES Innovation Awards" class="award-logo">
                         <span class="award-badge">CES Innovation Awards</span>
-                        <h3 class="award-title">Oral-B iO 10</h3>
+                        <h3 class="award-title">
+                            <a href="https://www.ces.tech/ces-innovation-awards/" target="_blank" rel="noopener noreferrer">Oral-B iO 10</a>
+                        </h3>
                         <p class="award-product">iO 10 with iO Sense Technology</p>
                         <p class="award-year">2022</p>
                         <span class="award-level winner">Honoree</span>
@@ -352,8 +415,11 @@
 
                     <!-- German Design Award - Oral-B iO -->
                     <div class="award-card">
+                        <img src="images/awards/german-design-award-logo.png" alt="German Design Award" class="award-logo">
                         <span class="award-badge">German Design Award</span>
-                        <h3 class="award-title">Oral-B iO</h3>
+                        <h3 class="award-title">
+                            <a href="https://www.german-design-award.com/en" target="_blank" rel="noopener noreferrer">Oral-B iO</a>
+                        </h3>
                         <p class="award-product">Revolutionary iO Platform</p>
                         <p class="award-year">2021</p>
                         <span class="award-level winner">Winner</span>
@@ -361,8 +427,11 @@
 
                     <!-- Red Dot - Oral-B iO -->
                     <div class="award-card">
+                        <img src="images/awards/red-dot-award-logo.png" alt="Red Dot Award" class="award-logo">
                         <span class="award-badge">Red Dot Award</span>
-                        <h3 class="award-title">Oral-B iO</h3>
+                        <h3 class="award-title">
+                            <a href="https://www.red-dot.org/" target="_blank" rel="noopener noreferrer">Oral-B iO</a>
+                        </h3>
                         <p class="award-product">iO Electric Toothbrush Platform</p>
                         <p class="award-year">2020</p>
                         <span class="award-level winner">Winner</span>
@@ -370,8 +439,11 @@
 
                     <!-- iF Design Award - Oral-B CLIC -->
                     <div class="award-card">
+                        <img src="images/awards/if-design-award-logo.png" alt="iF Design Award" class="award-logo">
                         <span class="award-badge">iF Design Award</span>
-                        <h3 class="award-title">Oral-B CLIC</h3>
+                        <h3 class="award-title">
+                            <a href="https://ifdesign.com/en/" target="_blank" rel="noopener noreferrer">Oral-B CLIC</a>
+                        </h3>
                         <p class="award-product">Sustainable Toothbrush Design</p>
                         <p class="award-year">2020</p>
                         <span class="award-level winner">Winner</span>
@@ -379,8 +451,11 @@
 
                     <!-- German Design Award - Oral-B CLIC -->
                     <div class="award-card">
+                        <img src="images/awards/german-design-award-logo.png" alt="German Design Award" class="award-logo">
                         <span class="award-badge">German Design Award</span>
-                        <h3 class="award-title">Oral-B CLIC</h3>
+                        <h3 class="award-title">
+                            <a href="https://www.german-design-award.com/en" target="_blank" rel="noopener noreferrer">Oral-B CLIC</a>
+                        </h3>
                         <p class="award-product">Innovative Sustainable Design</p>
                         <p class="award-year">2020</p>
                         <span class="award-level winner">Winner</span>
@@ -388,8 +463,11 @@
 
                     <!-- Red Dot - Oral-B CLIC -->
                     <div class="award-card">
+                        <img src="images/awards/red-dot-award-logo.png" alt="Red Dot Award" class="award-logo">
                         <span class="award-badge">Red Dot Award</span>
-                        <h3 class="award-title">Oral-B CLIC</h3>
+                        <h3 class="award-title">
+                            <a href="https://www.red-dot.org/" target="_blank" rel="noopener noreferrer">Oral-B CLIC</a>
+                        </h3>
                         <p class="award-product">Sustainable Electric Toothbrush</p>
                         <p class="award-year">2019</p>
                         <span class="award-level winner">Winner</span>
@@ -397,8 +475,11 @@
 
                     <!-- iF Award - Oral-B Pulsonic Slim Luxe -->
                     <div class="award-card">
+                        <img src="images/awards/if-design-award-logo.png" alt="iF Design Award" class="award-logo">
                         <span class="award-badge">iF Design Award</span>
-                        <h3 class="award-title">Oral-B Pulsonic Slim Luxe</h3>
+                        <h3 class="award-title">
+                            <a href="https://ifdesign.com/en/" target="_blank" rel="noopener noreferrer">Oral-B Pulsonic Slim Luxe</a>
+                        </h3>
                         <p class="award-product">Premium Sonic Toothbrush</p>
                         <p class="award-year">2019</p>
                         <span class="award-level winner">Winner</span>
@@ -411,37 +492,43 @@
                 
                 <div class="awards-by-type">
                     <div class="type-card">
-                        <h3>German Design Award</h3>
+                        <img src="images/awards/german-design-award-logo.png" alt="German Design Award">
+                        <h3><a href="https://www.german-design-award.com/en" target="_blank" rel="noopener noreferrer">German Design Award</a></h3>
                         <p>15+</p>
                         <span>Awards (2017-2025)</span>
                     </div>
                     
                     <div class="type-card">
-                        <h3>iF Design Award</h3>
+                        <img src="images/awards/if-design-award-logo.png" alt="iF Design Award">
+                        <h3><a href="https://ifdesign.com/en/" target="_blank" rel="noopener noreferrer">iF Design Award</a></h3>
                         <p>8+</p>
                         <span>Awards (2019-2025)</span>
                     </div>
                     
                     <div class="type-card">
-                        <h3>Red Dot Award</h3>
+                        <img src="images/awards/red-dot-award-logo.png" alt="Red Dot Award">
+                        <h3><a href="https://www.red-dot.org/" target="_blank" rel="noopener noreferrer">Red Dot Award</a></h3>
                         <p>7+</p>
                         <span>Awards (2019-2025)</span>
                     </div>
                     
                     <div class="type-card">
-                        <h3>Good Design Award</h3>
+                        <img src="images/awards/good-design-award-logo.png" alt="Good Design Award">
+                        <h3><a href="https://www.good-designawards.com/" target="_blank" rel="noopener noreferrer">Good Design Award</a></h3>
                         <p>10+</p>
                         <span>Awards (2016-2024)</span>
                     </div>
                     
                     <div class="type-card">
-                        <h3>CES Innovation</h3>
+                        <img src="images/awards/ces-innovation-awards-logo.png" alt="CES Innovation">
+                        <h3><a href="https://www.ces.tech/ces-innovation-awards/" target="_blank" rel="noopener noreferrer">CES Innovation</a></h3>
                         <p>2</p>
                         <span>Honoree Awards</span>
                     </div>
                     
                     <div class="type-card">
-                        <h3>Fast Company</h3>
+                        <img src="images/awards/fast-company-ibd-logo.png" alt="Fast Company">
+                        <h3><a href="https://www.fastcompany.com/innovation-by-design" target="_blank" rel="noopener noreferrer">Fast Company</a></h3>
                         <p>1</p>
                         <span>Innovation By Design</span>
                     </div>
@@ -456,15 +543,18 @@
                     <h3 class="year-header">2025</h3>
                     <ul class="award-list">
                         <li class="award-item">
-                            <strong>German Design Award 2025</strong>
+                            <img src="images/awards/german-design-award-logo.png" alt="German Design Award" class="inline-award-logo">
+                            <strong><a href="https://www.german-design-award.com/en" target="_blank" rel="noopener noreferrer">German Design Award 2025</a></strong>
                             <span>iO Series 2</span>
                         </li>
                         <li class="award-item">
-                            <strong>iF Award 2025</strong>
+                            <img src="images/awards/if-design-award-logo.png" alt="iF Award" class="inline-award-logo">
+                            <strong><a href="https://ifdesign.com/en/" target="_blank" rel="noopener noreferrer">iF Award 2025</a></strong>
                             <span>iO Series 2</span>
                         </li>
                         <li class="award-item">
-                            <strong>Red Dot 2025</strong>
+                            <img src="images/awards/red-dot-award-logo.png" alt="Red Dot" class="inline-award-logo">
+                            <strong><a href="https://www.red-dot.org/" target="_blank" rel="noopener noreferrer">Red Dot 2025</a></strong>
                             <span>iO Series 2</span>
                         </li>
                     </ul>
@@ -475,7 +565,8 @@
                     <h3 class="year-header">2024</h3>
                     <ul class="award-list">
                         <li class="award-item">
-                            <strong>Good Design Award USA 2024</strong>
+                            <img src="images/awards/good-design-award-logo.png" alt="Good Design Award" class="inline-award-logo">
+                            <strong><a href="https://www.good-designawards.com/" target="_blank" rel="noopener noreferrer">Good Design Award USA 2024</a></strong>
                             <span>Oral-B iO Series 2</span>
                         </li>
                     </ul>
