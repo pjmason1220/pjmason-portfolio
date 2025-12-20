@@ -7,228 +7,281 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
         /* Resume Page Specific Styles */
-        .resume-header {
+        .resume-hero {
             text-align: center;
-            padding: 40px 0;
-            border-bottom: 2px solid #e0e0e0;
-            margin-bottom: 40px;
+            padding: 60px 0;
+            margin-bottom: 60px;
         }
         
-        .resume-header h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
-        }
-        
-        .resume-contact {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            font-size: 16px;
-            color: #666;
-            margin-top: 15px;
-        }
-        
-        .resume-contact a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-        
-        .download-section {
-            text-align: center;
-            padding: 30px;
-            background: #f9f9f9;
-            border-radius: 8px;
-            margin-bottom: 50px;
-        }
-        
-        .download-section p {
-            font-size: 16px;
-            color: #666;
+        .resume-hero h1 {
+            font-size: 48px;
             margin-bottom: 20px;
         }
         
-        .btn-download {
+        .download-resume {
             display: inline-block;
-            padding: 15px 40px;
+            padding: 15px 35px;
             background: #0066cc;
             color: #fff;
             text-decoration: none;
             border-radius: 4px;
             font-size: 16px;
-            font-weight: 500;
+            font-weight: 600;
+            margin-top: 20px;
             transition: background 0.3s;
         }
         
-        .btn-download:hover {
+        .download-resume:hover {
             background: #004499;
         }
         
         .resume-section {
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
         
         .resume-section h2 {
-            font-size: 28px;
+            font-size: 32px;
             color: #222;
-            margin-bottom: 25px;
-            padding-bottom: 10px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
             border-bottom: 2px solid #0066cc;
         }
         
         .profile-text {
-            font-size: 16px;
+            font-size: 17px;
             line-height: 1.8;
             color: #555;
+            max-width: 900px;
         }
         
         .skills-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            margin-top: 30px;
         }
         
         .skill-category h3 {
-            font-size: 18px;
+            font-size: 20px;
             color: #0066cc;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             font-weight: 600;
         }
         
         .skill-category p {
-            font-size: 15px;
+            font-size: 16px;
             line-height: 1.7;
             color: #555;
         }
         
-        .job {
-            margin-bottom: 40px;
+        .experience-item {
+            margin-bottom: 45px;
+            padding: 30px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            position: relative;
         }
         
-        .job-header {
-            margin-bottom: 15px;
+        .experience-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 20px;
         }
         
-        .job-title {
-            font-size: 20px;
-            font-weight: 600;
+        .company-logo {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+        
+        .experience-title-block {
+            flex: 1;
+        }
+        
+        .experience-item h3 {
+            font-size: 22px;
             color: #222;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        
+        .experience-item .job-title {
+            font-size: 18px;
+            color: #0066cc;
+            font-weight: 600;
             margin-bottom: 5px;
         }
         
-        .job-company {
-            font-size: 16px;
+        .experience-item .location-date {
+            font-size: 15px;
             color: #666;
-            margin-bottom: 3px;
+            margin-bottom: 15px;
         }
         
-        .job-location-dates {
-            font-size: 15px;
-            color: #999;
-        }
-        
-        .job-description {
-            font-size: 15px;
+        .experience-item p {
+            font-size: 16px;
             line-height: 1.7;
             color: #555;
             margin-bottom: 15px;
         }
         
-        .job-achievements {
+        .experience-item ul {
             list-style: none;
-            padding-left: 0;
+            padding: 0;
+            margin-top: 15px;
         }
         
-        .job-achievements li {
+        .experience-item ul li {
             font-size: 15px;
-            line-height: 1.7;
             color: #555;
-            padding-left: 20px;
+            padding-left: 25px;
             position: relative;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            line-height: 1.6;
         }
         
-        .job-achievements li::before {
+        .experience-item ul li::before {
             content: "•";
             color: #0066cc;
             font-weight: bold;
+            font-size: 20px;
             position: absolute;
             left: 0;
         }
         
         .education-item {
-            margin-bottom: 30px;
+            padding: 25px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            margin-bottom: 20px;
         }
         
-        .education-item h3 {
-            font-size: 20px;
+        .education-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .education-logo {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
+        
+        .education-details h3 {
+            font-size: 22px;
             color: #222;
             margin-bottom: 5px;
         }
         
-        .degree {
+        .education-details p {
             font-size: 16px;
-            color: #0066cc;
-            margin-bottom: 5px;
-        }
-        
-        .education-details {
-            font-size: 15px;
             color: #666;
+            margin: 3px 0;
         }
         
         .awards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .award-item {
+            padding: 25px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .award-logo {
+            height: 50px;
+            width: auto;
+            margin: 0 auto 15px;
+            object-fit: contain;
+        }
+        
+        .award-item h4 {
+            font-size: 18px;
+            color: #222;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .award-item p {
+            font-size: 15px;
+            color: #666;
+            margin: 5px 0;
+        }
+        
+        .certification-item {
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
             gap: 20px;
         }
         
-        .award-card {
-            padding: 20px;
-            background: #f9f9f9;
-            border-radius: 4px;
-            border-left: 3px solid #0066cc;
+        .cert-logo {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+            flex-shrink: 0;
         }
         
-        .award-card strong {
-            display: block;
-            font-size: 16px;
+        .cert-details {
+            flex: 1;
+        }
+        
+        .cert-details h4 {
+            font-size: 18px;
             color: #222;
             margin-bottom: 5px;
+            font-weight: 600;
         }
         
-        .award-card span {
-            font-size: 14px;
+        .cert-details p {
+            font-size: 15px;
             color: #666;
+            margin: 0;
         }
         
         /* Responsive */
         @media (max-width: 768px) {
-            .resume-header h1 {
-                font-size: 32px;
-            }
-            
-            .resume-contact {
-                flex-direction: column;
-                gap: 10px;
+            .resume-hero h1 {
+                font-size: 36px;
             }
             
             .skills-grid {
                 grid-template-columns: 1fr;
             }
-        }
-        
-        @media print {
-            nav, footer, .download-section {
-                display: none;
+            
+            .experience-header {
+                flex-direction: column;
+                align-items: flex-start;
             }
             
-            body {
-                font-size: 12pt;
+            .company-logo {
+                height: 40px;
             }
             
-            .resume-section {
-                page-break-inside: avoid;
+            .education-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .awards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .certification-item {
+                flex-direction: column;
+                align-items: flex-start;
             }
         }
     </style>
@@ -251,22 +304,15 @@
 
     <main>
         <div class="container">
-            <div class="resume-header">
-                <h1>PJ Mason</h1>
-                <div class="resume-contact">
-                    <span>298 Forest Edge Drive, South Lebanon, Ohio 45065</span>
-                    <span>|</span>
-                    <span>513-282-8775</span>
-                    <span>|</span>
-                    <a href="mailto:pjmason1220@gmail.com">pjmason1220@gmail.com</a>
-                </div>
+            <div class="resume-hero">
+                <h1>Resume</h1>
+                <p style="font-size: 18px; color: #666; margin-bottom: 20px;">
+                    298 Forest Edge Drive, South Lebanon, Ohio 45065 | 513-282-8775 | pjmason1220@gmail.com
+                </p>
+                <a href="PJ_Mason_Resume.pdf" class="download-resume" download>Download PDF Resume</a>
             </div>
 
-            <div class="download-section">
-                <p>Download a PDF version of my resume for your records</p>
-                <a href="files/PJ_Mason_Resume.pdf" class="btn-download" download>Download Resume PDF</a>
-            </div>
-
+            <!-- Profile Section -->
             <section class="resume-section">
                 <h2>Profile</h2>
                 <p class="profile-text">
@@ -279,6 +325,7 @@
                 </p>
             </section>
 
+            <!-- Core Skills Section -->
             <section class="resume-section">
                 <h2>Core Skills</h2>
                 <div class="skills-grid">
@@ -294,73 +341,81 @@
                     <div class="skill-category">
                         <h3>Executional</h3>
                         <p>
-                            Sketching, high-res visualization, physical & digital prototyping, Fusion 360, Adobe 
-                            Creative Suite, Figma, and light Front-end UX/UI programming (Swift, Flutter, HTML & CSS).
+                            Sketching, high-res visualization, physical & digital prototyping, Fusion 360, 
+                            Adobe Creative Suite, Figma, and light Front-end UX/UI programming (Swift, Flutter, 
+                            HTML & CSS).
                         </p>
                     </div>
                 </div>
             </section>
 
+            <!-- Professional Experience Section -->
             <section class="resume-section">
                 <h2>Professional Experience</h2>
 
-                <div class="job">
-                    <div class="job-header">
-                        <div class="job-title">Senior Director, Design - P&G Oral Care & Smart Products</div>
-                        <div class="job-company">Procter & Gamble</div>
-                        <div class="job-location-dates">Frankfurt, Germany & Cincinnati, OH | July 2014 - Present</div>
+                <!-- P&G - Senior Director -->
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <img src="images/resume/pg-logo.png" alt="P&G" class="company-logo">
+                        <div class="experience-title-block">
+                            <div class="job-title">Senior Director, Design</div>
+                            <h3>P&G - Oral Care & Smart Products</h3>
+                            <div class="location-date">Frankfurt, Germany & Cincinnati, OH | July 2014 - Present</div>
+                        </div>
                     </div>
-                    <p class="job-description">
-                        <em>Oral Care & Smart Products Innovation Design Leader</em> - Provide Design leadership to 
-                        the P&G Oral Care & Smart Products Innovation Design organizations in Kronberg, Germany, 
-                        Beijing, China, and Cincinnati, Ohio to deliver category re-platforming programs across 
-                        multiple innovation verticals, including product, accessories, materials & finishes, and 
-                        human computer interface.
+                    <p>
+                        <strong>Oral Care & Smart Products Innovation Design Leader</strong> - provide Design leadership 
+                        to the P&G Oral Care & Smart Products Innovation Design organizations in Kronberg, Germany, 
+                        Beijing, China, and Cincinnati, Ohio to deliver category re-platforming programs across multiple 
+                        innovation verticals, including product, accessories, materials & finishes, and human computer interface.
                     </p>
-                    <ul class="job-achievements">
-                        <li>Responsible for career plans, budgets, and resource management for a team of 16 Designers, 
-                            located in North America, China, and Europe</li>
-                        <li>Led Vision Development for multiple Oral Care & Smart Products Innovation Platforms - 
-                            Power Oral Care, Manual Oral Care, Accessories, Interactivity, Chemistry - example = Oral-B iO</li>
-                        <li>Led development of first in P&G Digital Design Capability - from external resources to 
-                            fully internalized capability deployed against our categories biggest Consumer Jobs-to-be-Done</li>
-                        <li>Programs either led or co-developed are responsible for $100's of millions in topline 
-                            growth for the Oral Care Category over the past 13 years</li>
+                    <ul>
+                        <li>Responsible for career plans, budgets, and resource management for a team of 16 Designers, located in North America, China, and Europe</li>
+                        <li>Led Vision Development for multiple Oral Care & Smart Products Innovation Platforms - Power Oral Care, Manual Oral Care, Accessories, Interactivity, Chemistry - example = Oral-B iO</li>
+                        <li>Led development of first in P&G Digital Design Capability - from external resources to fully internalized capability deployed against our categories biggest Consumer Jobs-to-be-Done</li>
+                        <li>Programs either led or co-developed are responsible for $100's of millions in topline growth for the Oral Care Category over the past 13 years</li>
                     </ul>
                 </div>
 
-                <div class="job">
-                    <div class="job-header">
-                        <div class="job-title">Principal Design Manager - P&G Oral Care</div>
-                        <div class="job-company">Procter & Gamble</div>
-                        <div class="job-location-dates">Cincinnati, OH | December 2010 - July 2014</div>
+                <!-- P&G - Principal Design Manager (Oral Care) -->
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <img src="images/resume/pg-logo.png" alt="P&G" class="company-logo">
+                        <div class="experience-title-block">
+                            <div class="job-title">Principal Design Manager</div>
+                            <h3>P&G - Oral Care</h3>
+                            <div class="location-date">Cincinnati, OH | December 2010 - July 2014</div>
+                        </div>
                     </div>
-                    <p class="job-description">
-                        <em>Oral Care Design Front End Innovation</em> - Provide Design leadership to P&G Oral Care 
+                    <p>
+                        <strong>Oral Care Design Front End Innovation</strong> - provide Design leadership to P&G Oral Care 
                         organization as part of the multi-functional FEI Leadership Team. Responsible for creating 
                         cross-functional relationships and portfolio management systems that ensure trends, consumer 
-                        understanding, Lighthouse/Design Thinking, and technologies are holistically linked into Oral 
-                        Care innovation portfolio and then delivered to go-to-market portfolio and initiative teams.
+                        understanding, Lighthouse/Design Thinking, and technologies are holistically linked into Oral Care 
+                        innovation portfolio and then delivered to go-to-market portfolio and initiative teams.
                     </p>
-                    <ul class="job-achievements">
+                    <ul>
                         <li>Led visualization & development of portfolio management system used by Category Leadership Team</li>
                         <li>Led strategic definition and development of category and company first Augmented Service Offering</li>
                     </ul>
                 </div>
 
-                <div class="job">
-                    <div class="job-header">
-                        <div class="job-title">Principal Design Manager - P&G Hair Care</div>
-                        <div class="job-company">Procter & Gamble</div>
-                        <div class="job-location-dates">Cincinnati, OH | November 2008 - December 2010</div>
+                <!-- P&G - Principal Design Manager (Hair Care) -->
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <img src="images/resume/pg-logo.png" alt="P&G" class="company-logo">
+                        <div class="experience-title-block">
+                            <div class="job-title">Principal Design Manager</div>
+                            <h3>P&G - Hair Care</h3>
+                            <div class="location-date">Cincinnati, OH | November 2008 - December 2010</div>
+                        </div>
                     </div>
-                    <p class="job-description">
-                        <em>HairCare Design Innovation</em> - Provide Design leadership to P&G Beauty and Grooming 
-                        organization. Led multi-functional teams that delivered a leadership aligned cross-category 
-                        packaging asset deployment strategy. This strategy re-imagines how HairCare as a category 
-                        will go to market.
+                    <p>
+                        <strong>HairCare Design Innovation</strong> - provide Design leadership to P&G Beauty and Grooming 
+                        organization. Led multi-functional teams that delivered a leadership aligned cross-category packaging 
+                        asset deployment strategy. This strategy re-imagines how HairCare as a category will go to market.
                     </p>
-                    <ul class="job-achievements">
+                    <ul>
                         <li>$55 million cost savings year-on-year</li>
                         <li>30% reduction in 3D portfolio complexity</li>
                         <li>50% reduction in time to market for new packaging initiatives</li>
@@ -369,130 +424,205 @@
                     </ul>
                 </div>
 
-                <div class="job">
-                    <div class="job-header">
-                        <div class="job-title">Senior Design Manager - P&G Hair Care</div>
-                        <div class="job-company">Procter & Gamble</div>
-                        <div class="job-location-dates">Cincinnati, OH & Kobe, Japan | October 2005 - November 2008</div>
+                <!-- P&G - Senior Design Manager (Hair Care) -->
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <img src="images/resume/pg-logo.png" alt="P&G" class="company-logo">
+                        <div class="experience-title-block">
+                            <div class="job-title">Senior Design Manager</div>
+                            <h3>P&G - Hair Care</h3>
+                            <div class="location-date">Cincinnati, OH & Kobe, Japan | October 2005 - November 2008</div>
+                        </div>
                     </div>
-                    <p class="job-description">
-                        <em>HairCare / Pantene</em> - Led 3D vision development for Pantene brand globally as part 
-                        of a multi-functional team that restaged the brand, beginning with product technology and 
-                        architecture re-inventions.
+                    <p>
+                        <strong>HairCare / Pantene</strong> - led 3D vision development for Pantene brand globally as part 
+                        of a multi-functional team that restaged the brand, beginning with product technology and architecture 
+                        re-inventions.
                     </p>
-                    <ul class="job-achievements">
-                        <li>3D Design Lead on multi-functional team that designed and delivered 3D packaging assets 
-                            as part of Pantene total brand re-stage to multiple countries and regions globally</li>
-                        <li>Collaborated on the delivery of multiple regional brand re-stages to Asia-Pacific region - 
-                            including VS, Pantene, Pantene Clinicare, and H&S</li>
-                        <li>Created 10-year vision for Pantene Treatments and Styling packaging with first step on 
-                            that path being delivered to market in above mentioned re-stage</li>
+                    <ul>
+                        <li>3D Design Lead on multi-functional team that designed and delivered 3D packaging assets as part of Pantene total brand re-stage to multiple countries and regions globally</li>
+                        <li>Collaborated on the delivery of multiple regional brand re-stages to Asia-Pacific region - including VS, Pantene, Pantene Clinicare, and H&S</li>
+                        <li>Created 10-year vision for Pantene Treatments and Styling packaging with first step on that path being delivered to market in above mentioned re-stage</li>
                     </ul>
                 </div>
 
-                <div class="job">
-                    <div class="job-header">
-                        <div class="job-title">Design Manager - P&G Fem Care</div>
-                        <div class="job-company">Procter & Gamble</div>
-                        <div class="job-location-dates">Cincinnati, OH | November 2003 - October 2005</div>
+                <!-- P&G - Design Manager (Fem Care) -->
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <img src="images/resume/pg-logo.png" alt="P&G" class="company-logo">
+                        <div class="experience-title-block">
+                            <div class="job-title">Design Manager</div>
+                            <h3>P&G - Fem Care</h3>
+                            <div class="location-date">Cincinnati, OH | November 2003 - October 2005</div>
+                        </div>
                     </div>
-                    <p class="job-description">
-                        <em>FemCare New Business Development</em> - Led the development of a new to the world brand 
+                    <p>
+                        <strong>FemCare New Business Development</strong> - led the development of a new to the world brand 
                         aimed at a FemCare category whitespace. Owned the delivery and creation of conceptual territory 
                         definition, inspirational consumer definition, product and packaging design, as well as graphic tonality.
                     </p>
-                    <ul class="job-achievements">
+                    <ul>
                         <li>Delivered the 3rd largest initiative for Fem Care in previous 10 years</li>
-                        <li>Design Leader for category whitespace expansion leading both brand identity and product 
-                            innovation from upstream development all the way to go-to-market</li>
-                        <li>Initiated and cultivated first ever Design partnership with in-house prototypers to 
-                            deliver 100's of product prototypes for consumer research</li>
+                        <li>Design Leader for category whitespace expansion leading both brand identity and product innovation from upstream development all the way to go-to-market</li>
+                        <li>Initiated and cultivated first ever Design partnership with in-house prototypers to deliver 100's of product prototypes for consumer research</li>
                     </ul>
                 </div>
 
-                <div class="job">
-                    <div class="job-header">
-                        <div class="job-title">Senior Industrial Designer</div>
-                        <div class="job-company">LPK</div>
-                        <div class="job-location-dates">Cincinnati, OH | 2000 - 2003</div>
+                <!-- LPK -->
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <img src="images/resume/lpk-logo.png" alt="LPK" class="company-logo">
+                        <div class="experience-title-block">
+                            <div class="job-title">Senior Industrial Designer</div>
+                            <h3>LPK</h3>
+                            <div class="location-date">Cincinnati, OH | 2000 - 2003</div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="job">
-                    <div class="job-header">
-                        <div class="job-title">Industrial Designer</div>
-                        <div class="job-company">Philips Consumer Electronics</div>
-                        <div class="job-location-dates">Knoxville, TN | 1999 - 2000</div>
+                <!-- Philips - Industrial Designer -->
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <img src="images/resume/phillips-logo.png" alt="Philips" class="company-logo">
+                        <div class="experience-title-block">
+                            <div class="job-title">Industrial Designer</div>
+                            <h3>Philips Consumer Electronics</h3>
+                            <div class="location-date">Knoxville, TN | 1999 - 2000</div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="job">
-                    <div class="job-header">
-                        <div class="job-title">Co-op Industrial Designer</div>
-                        <div class="job-company">Philips Consumer Electronics & Karrot Design Ltd</div>
-                        <div class="job-location-dates">Knoxville, TN & Hong Kong, China | 1996 - 1998</div>
+                <!-- Philips - Co-op 1998 -->
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <img src="images/resume/phillips-logo.png" alt="Philips" class="company-logo">
+                        <div class="experience-title-block">
+                            <div class="job-title">Co-op Industrial Designer</div>
+                            <h3>Philips Consumer Electronics</h3>
+                            <div class="location-date">Knoxville, TN | 1998</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Karrot Design -->
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <img src="images/resume/karrot-logo.png" alt="Karrot Design" class="company-logo">
+                        <div class="experience-title-block">
+                            <div class="job-title">Co-op Industrial Designer</div>
+                            <h3>Karrot Design Ltd</h3>
+                            <div class="location-date">Hong Kong, China | 1997</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Philips - Co-op 1996 -->
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <img src="images/resume/phillips-logo.png" alt="Philips" class="company-logo">
+                        <div class="experience-title-block">
+                            <div class="job-title">Co-op Industrial Designer</div>
+                            <h3>Philips Consumer Electronics</h3>
+                            <div class="location-date">Knoxville, TN | 1996</div>
+                        </div>
                     </div>
                 </div>
             </section>
 
+            <!-- Education Section -->
             <section class="resume-section">
                 <h2>Education</h2>
-                
                 <div class="education-item">
-                    <h3>University of Cincinnati</h3>
-                    <p class="degree">Bachelor of Science in Industrial Design</p>
-                    <p class="education-details">
-                        College of Design, Architecture, Art, and Planning - Cincinnati, OH<br>
-                        1999 - Industrial Design Student of the Year
-                    </p>
+                    <div class="education-header">
+                        <img src="images/resume/uc-daap-logo.png" alt="University of Cincinnati" class="education-logo">
+                        <div class="education-details">
+                            <h3>University of Cincinnati</h3>
+                            <p>College of Design, Architecture, Art, and Planning</p>
+                            <p><strong>Bachelor of Science in Industrial Design</strong> - 1999</p>
+                            <p style="color: #0066cc; font-weight: 600;">Industrial Design Student of the Year</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
+            <!-- Awards & Certifications Section -->
             <section class="resume-section">
                 <h2>Awards & Certifications</h2>
+                
+                <h3 style="font-size: 24px; color: #222; margin-bottom: 25px; margin-top: 40px;">Design Awards</h3>
                 <div class="awards-grid">
-                    <div class="award-card">
-                        <strong>German Design Award - Gold</strong>
-                        <span>Oral-B iO, Oral-B Clic, Oral-B Smart Series 7000 App</span>
+                    <div class="award-item">
+                        <img src="images/awards/german-design-award-logo.png" alt="German Design Award" class="award-logo">
+                        <h4>German Design Award</h4>
+                        <p>Gold - Oral-B iO</p>
+                        <p>Gold - Oral-B Clic</p>
+                        <p>Gold - Smart Series 7000 App</p>
                     </div>
-                    <div class="award-card">
-                        <strong>iF Design Award</strong>
-                        <span>Oral-B iO, Oral-B Clic</span>
+
+                    <div class="award-item">
+                        <img src="images/awards/if-design-award-logo.png" alt="iF Design Award" class="award-logo">
+                        <h4>iF Design Award</h4>
+                        <p>Oral-B iO</p>
+                        <p>Oral-B Clic</p>
                     </div>
-                    <div class="award-card">
-                        <strong>Red Dot Award</strong>
-                        <span>Oral-B iO, Oral-B Clic, Oral-B Smart Series 7000 App</span>
+
+                    <div class="award-item">
+                        <img src="images/awards/red-dot-award-logo.png" alt="Red Dot Award" class="award-logo">
+                        <h4>Red Dot Award</h4>
+                        <p>Oral-B iO</p>
+                        <p>Oral-B Clic</p>
+                        <p>Smart Series 7000 App</p>
                     </div>
-                    <div class="award-card">
-                        <strong>CES Innovation Award</strong>
-                        <span>Oral-B iO</span>
+
+                    <div class="award-item">
+                        <img src="images/awards/good-design-award-logo.png" alt="Good Design Award" class="award-logo">
+                        <h4>Good Design Award</h4>
+                        <p>Oral-B Clic</p>
                     </div>
-                    <div class="award-card">
-                        <strong>Good Design Award</strong>
-                        <span>Oral-B Clic</span>
+
+                    <div class="award-item">
+                        <img src="images/awards/ces-innovation-awards-logo.png" alt="CES Innovation Award" class="award-logo">
+                        <h4>CES Innovation Award</h4>
+                        <p>Oral-B iO</p>
                     </div>
-                    <div class="award-card">
-                        <strong>Cannes Lion - Bronze</strong>
-                        <span>Oral-B Smart Series 7000 App</span>
+
+                    <div class="award-item">
+                        <img src="images/awards/idea-award-logo.png" alt="IDEA Award" class="award-logo">
+                        <h4>IDSA/IDEA</h4>
+                        <p>Bronze Award - GE Buddy Lights</p>
                     </div>
-                    <div class="award-card">
-                        <strong>Nielsen Norman Group</strong>
-                        <span>User Experience Certification</span>
+                </div>
+
+                <h3 style="font-size: 24px; color: #222; margin-bottom: 25px; margin-top: 50px;">Professional Certifications</h3>
+                
+                <div class="certification-item">
+                    <img src="images/resume/nng-logo.png" alt="Nielsen Norman Group" class="cert-logo">
+                    <div class="cert-details">
+                        <h4>User Experience Certification</h4>
+                        <p>Nielsen Norman Group</p>
                     </div>
-                    <div class="award-card">
-                        <strong>Harvard Business School</strong>
-                        <span>Executive Education - Launching New Ventures (2014)</span>
+                </div>
+
+                <div class="certification-item">
+                    <img src="images/resume/hbs-execed-logo.png" alt="Harvard Business School" class="cert-logo">
+                    <div class="cert-details">
+                        <h4>Executive Education - Launching New Ventures</h4>
+                        <p>Harvard Business School - 2014</p>
                     </div>
-                    <div class="award-card">
-                        <strong>Harvard Business School</strong>
-                        <span>Executive Education - Leading Product Innovation (2010)</span>
-                    </div>
-                    <div class="award-card">
-                        <strong>IDSA/IDEA Bronze Award</strong>
-                        <span>GE Buddy Lights</span>
+                </div>
+
+                <div class="certification-item">
+                    <img src="images/resume/hbs-execed-logo.png" alt="Harvard Business School" class="cert-logo">
+                    <div class="cert-details">
+                        <h4>Executive Education - Leading Product Innovation</h4>
+                        <p>Harvard Business School - 2010</p>
                     </div>
                 </div>
             </section>
+
+            <div style="text-align: center; margin-top: 60px; padding: 40px; background: #f9f9f9; border-radius: 8px;">
+                <a href="PJ_Mason_Resume.pdf" class="download-resume" download>Download Full Resume (PDF)</a>
+            </div>
         </div>
     </main>
 
