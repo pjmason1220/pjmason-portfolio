@@ -24,6 +24,401 @@
     <title>PJ Mason - Design Leader</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Homepage Specific Styles */
+        .hero {
+            min-height: 90vh;
+            padding: 60px 0;
+            position: relative;
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero-content {
+            padding-right: 40px;
+        }
+
+        .hero-content h1 {
+            font-size: 72px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            color: #777;
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #0066cc;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #004499;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,102,204,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #0066cc;
+            border: 2px solid #0066cc;
+        }
+
+        .btn-secondary:hover {
+            background: #0066cc;
+            color: white;
+        }
+
+        .hero-image {
+            position: relative;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.4s ease;
+        }
+
+        .hero-image:hover img {
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        /* Featured Work Section */
+        .featured-work {
+            padding: 60px 0;
+            background: #f9f9f9;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        .section-header p {
+            font-size: 20px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .work-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.4s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .work-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,102,204,0.15);
+        }
+
+        .work-card-image {
+            height: 350px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .work-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .work-card:hover .work-card-image img {
+            transform: scale(1.05);
+        }
+
+        .work-card-content {
+            padding: 30px;
+        }
+
+        .work-card-tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .work-tag {
+            font-size: 12px;
+            padding: 4px 12px;
+            background: #e8f4f8;
+            color: #0066cc;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        .work-card h3 {
+            font-size: 28px;
+            margin-bottom: 12px;
+            color: #222;
+        }
+
+        .work-card p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .work-card-link {
+            color: #0066cc;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .work-card-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Awards Showcase */
+        .awards-showcase {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 40px;
+            align-items: center;
+        }
+
+        .award-logo {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            filter: grayscale(100%);
+            opacity: 0.6;
+        }
+
+        .award-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        .award-logo img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        /* Process Section */
+        .process-section {
+            padding: 60px 0;
+            background: #fafafa;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .process-content h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .process-content p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .process-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .process-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 50px 0;
+            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+            color: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .stat-item p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero {
+                min-height: auto;
+            }
+
+            .hero .container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-content {
+                padding-right: 0;
+            }
+
+            .hero-content h1 {
+                font-size: 56px;
+            }
+
+            .hero-image {
+                height: 400px;
+            }
+
+            .work-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .awards-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 42px;
+            }
+
+            .hero-subtitle {
+                font-size: 20px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+            .section-header h2,
+            .process-content h2,
+            .cta-section h2 {
+                font-size: 36px;
+            }
+
+            .awards-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .work-card-image {
+                height: 250px;
+            }
+        }
+    </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -48,122 +443,204 @@
         </div>
     </nav>
 
-    <header>
-        <div class="container">
-            <h1>PJ Mason</h1>
-            <p class="tagline">Senior Design & Innovation Leader | Industrial & UX/UI Design | 20+ Years Experience</p>
-            <div class="contact-links">
-                <a href="files/PJ_Mason_Resume.pdf" class="btn-download" download style="padding: 8px 20px; background: #0066cc; color: #fff; text-decoration: none; border-radius: 4px; display: inline-block; margin-left: 10px;">Download Resume</a>
-            </div>
-        </div>
-    </header>
-
     <main id="main-content" role="main">
-        <div class="container">
-            <section id="about">
-                <h2>About</h2>
-                <p class="intro">
-                    Designer, maker, leader, entrepreneur, mentor, and lecturer with over 20 years of corporate 
-                    and consulting experience in Industrial and UX/UI Design. I believe that great product 
-                    experiences are built on a strong strategic foundation of deep user empathy, and are delivered 
-                    via hands-on prototyping, rapid visualization, and user co-creation. I am a highly motivated 
-                    leader and collaborator with a passion for creating and enabling teams and capabilities that 
-                    create value and opportunities to step change industries.
-                </p>
-            </section>
-
-            <section id="experience">
-                <h2>Experience Highlights</h2>
-                <div class="experience-grid">
-                    <div class="experience-card">
-                        <h3>P&G Oral Care & Smart Products</h3>
-                        <p class="role">Senior Director, Design | 2014–Present</p>
-                        <p>Leading design organizations across North America, China, and Europe. Responsible for 
-                        vision development and category re-platforming programs delivering hundreds of millions 
-                        in topline growth.</p>
-                    </div>
-                    
-                    <div class="experience-card">
-                        <h3>Oral-B iO</h3>
-                        <p class="role">Design Leadership</p>
-                        <p>Led vision and design development for award-winning Oral-B iO platform. Multiple 
-                        international design awards including German Design Award Gold, iF Design Award, 
-                        Red Dot, and CES Innovation Award.</p>
-                    </div>
-                    
-                    <div class="experience-card">
-                        <h3>Digital Design Capability</h3>
-                        <p class="role">P&G First</p>
-                        <p>Led development of P&G's first Digital Design Capability, transitioning from external 
-                        resources to fully internalized capability deployed against the category's biggest 
-                        consumer Jobs-to-be-Done.</p>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Design Leader.<br>Maker.<br>Innovator.</h1>
+                    <p class="hero-subtitle">Senior Director, Design at P&G</p>
+                    <p class="hero-description">
+                        20+ years creating award-winning products that blend physical and digital design.
+                        From sketches to smart products, I transform vision into reality.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="portfolio.html" class="btn btn-primary">View My Work</a>
+                        <a href="contact.html" class="btn btn-secondary">Let's Connect</a>
                     </div>
                 </div>
-            </section>
-
-            <section id="skills">
-                <h2>Core Capabilities</h2>
-                <div class="skills">
-                    <span class="skill-tag">Design Leadership</span>
-                    <span class="skill-tag">Design Thinking</span>
-                    <span class="skill-tag">UX/UI Design</span>
-                    <span class="skill-tag">Industrial Design</span>
-                    <span class="skill-tag">Prototyping</span>
-                    <span class="skill-tag">Innovation Strategy</span>
-                    <span class="skill-tag">Portfolio Management</span>
-                    <span class="skill-tag">Team Building</span>
-                    <span class="skill-tag">Fusion 360</span>
-                    <span class="skill-tag">Figma</span>
-                    <span class="skill-tag">Adobe Creative Suite</span>
-                    <span class="skill-tag">Front-end Development</span>
+                <div class="hero-image">
+                    <img src="images/oralb-io-fullpage.png" alt="Oral-B iO Award-Winning Design" loading="eager">
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section id="awards">
-                <h2>Recognition</h2>
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>50+</h3>
+                        <p>Design Awards</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>20+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>30+</h3>
+                        <p>Patents Filed</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>$100M+</h3>
+                        <p>Revenue Driven</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Work Section -->
+        <section class="featured-work">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Featured Work</h2>
+                    <p>Award-winning products that combine physical design excellence with digital innovation</p>
+                </div>
+
+                <div class="work-grid">
+                    <!-- Oral-B iO -->
+                    <div class="work-card">
+                        <div class="work-card-image">
+                            <img src="images/iO9-4handles-image.png" alt="Oral-B iO Electric Toothbrush" loading="lazy">
+                        </div>
+                        <div class="work-card-content">
+                            <div class="work-card-tags">
+                                <span class="work-tag">Product Design</span>
+                                <span class="work-tag">UX/UI</span>
+                                <span class="work-tag">Innovation</span>
+                            </div>
+                            <h3>Oral-B iO</h3>
+                            <p>Award-winning electric toothbrush platform. German Design Award Gold, iF Design Award, Red Dot, CES Innovation Award.</p>
+                            <a href="case-study-oral-b-io.html" class="work-card-link">
+                                View Case Study →
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- iO Sense -->
+                    <div class="work-card">
+                        <div class="work-card-image">
+                            <img src="images/io-sense-project-image.png" alt="iO Sense Smart Charging Base" loading="lazy">
+                        </div>
+                        <div class="work-card-content">
+                            <div class="work-card-tags">
+                                <span class="work-tag">IoT</span>
+                                <span class="work-tag">AI</span>
+                                <span class="work-tag">Smart Product</span>
+                            </div>
+                            <h3>iO Sense Smart Charger</h3>
+                            <p>First AI-powered toothbrush charging base with position detection and real-time coaching. CES Innovation Award 2022.</p>
+                            <a href="case-study-io-sense.html" class="work-card-link">
+                                View Case Study →
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Oral-B App -->
+                    <div class="work-card">
+                        <div class="work-card-image">
+                            <img src="images/OralB-App.png" alt="Oral-B Connected App" loading="lazy">
+                        </div>
+                        <div class="work-card-content">
+                            <div class="work-card-tags">
+                                <span class="work-tag">UX Design</span>
+                                <span class="work-tag">Mobile App</span>
+                                <span class="work-tag">Digital</span>
+                            </div>
+                            <h3>Oral-B Connected App</h3>
+                            <p>AI-powered brushing guidance app. German Design Award Gold, Red Dot, Cannes Lion Bronze.</p>
+                            <a href="portfolio.html" class="work-card-link">
+                                View Portfolio →
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- GE Buddy Lights -->
+                    <div class="work-card">
+                        <div class="work-card-image">
+                            <img src="images/ge-buddy-lights.png" alt="GE Buddy Lights" loading="lazy">
+                        </div>
+                        <div class="work-card-content">
+                            <div class="work-card-tags">
+                                <span class="work-tag">Industrial Design</span>
+                                <span class="work-tag">Consumer Product</span>
+                            </div>
+                            <h3>GE Buddy Lights</h3>
+                            <p>Innovative character-based lighting solution combining playful design with functional illumination.</p>
+                            <a href="portfolio.html" class="work-card-link">
+                                Explore More →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="process-section">
+            <div class="container">
+                <div class="process-grid">
+                    <div class="process-content">
+                        <h2>From Sketch to Product</h2>
+                        <p>
+                            Great design starts with a pencil. I believe in the power of rapid sketching and
+                            hands-on prototyping to explore ideas quickly and iterate fearlessly.
+                        </p>
+                        <p>
+                            My process blends traditional industrial design skills with modern digital tools,
+                            creating products that are both beautifully crafted and technologically sophisticated.
+                        </p>
+                        <a href="about.html" class="btn btn-primary" style="margin-top: 20px;">Learn About My Process</a>
+                    </div>
+                    <div class="process-image">
+                        <img src="images/oralb-io-sketch.png" alt="Design Process Sketches" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards Showcase -->
+        <section class="awards-showcase">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Award-Winning Design</h2>
+                    <p>Recognized by the world's most prestigious design competitions</p>
+                </div>
+
                 <div class="awards-grid">
-                    <div class="award-item">
-                        <strong>German Design Award - Gold</strong>
-                        <span>Oral-B iO, Oral-B Clic, Oral-B Smart Series 7000 App</span>
+                    <div class="award-logo">
+                        <img src="images/awards/german-design-award-logo.png" alt="German Design Award" loading="lazy">
                     </div>
-                    <div class="award-item">
-                        <strong>iF Design Award</strong>
-                        <span>Oral-B iO, Oral-B Clic</span>
+                    <div class="award-logo">
+                        <img src="images/awards/if-design-award-logo.png" alt="iF Design Award" loading="lazy">
                     </div>
-                    <div class="award-item">
-                        <strong>Red Dot Award</strong>
-                        <span>Oral-B iO, Oral-B Clic, Oral-B Smart Series 7000 App</span>
+                    <div class="award-logo">
+                        <img src="images/awards/red-dot-award-logo.png" alt="Red Dot Award" loading="lazy">
                     </div>
-                    <div class="award-item">
-                        <strong>CES Innovation Award</strong>
-                        <span>Oral-B iO</span>
+                    <div class="award-logo">
+                        <img src="images/awards/ces-innovation-awards-logo.png" alt="CES Innovation Award" loading="lazy">
                     </div>
-                    <div class="award-item">
-                        <strong>Cannes Lion - Bronze</strong>
-                        <span>Oral-B Smart Series 7000 App</span>
+                    <div class="award-logo">
+                        <img src="images/awards/good-design-award-logo.png" alt="Good Design Award" loading="lazy">
                     </div>
-                    <div class="award-item">
-                        <strong>Nielsen Norman Group</strong>
-                        <span>User Experience Certification</span>
+                    <div class="award-logo">
+                        <img src="images/awards/fast-company-ibd-logo.png" alt="Fast Company Innovation by Design" loading="lazy">
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section id="education">
-                <h2>Education</h2>
-                <p class="intro">
-                    <strong>University of Cincinnati</strong><br>
-                    Bachelor of Science in Industrial Design, 1999<br>
-                    Industrial Design Student of the Year
-                </p>
-                <br>
-                <p class="intro">
-                    <strong>Harvard Business School - Executive Education</strong><br>
-                    Launching New Ventures (2014)<br>
-                    Leading Product Innovation (2010)
-                </p>
-            </section>
-        </div>
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Let's Create Something Amazing</h2>
+                <p>Interested in design leadership, innovation strategy, or collaboration?</p>
+                <div class="hero-cta" style="justify-content: center;">
+                    <a href="contact.html" class="btn btn-primary">Get In Touch</a>
+                    <a href="files/PJ_Mason_Resume.pdf" class="btn btn-secondary" download>Download Resume</a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer role="contentinfo">
