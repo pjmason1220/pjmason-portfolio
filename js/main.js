@@ -1,26 +1,33 @@
 // PJ Mason Portfolio - Main JavaScript
 
-// Add interactive functionality here as needed
-console.log('Portfolio site loaded');
-```
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Portfolio site loaded');
 
-4. Click **Commit new file**
+    // Smooth scroll for anchor links
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    anchorLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href !== '#' && href !== '#!') {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
+    });
 
-### 3. Create the Images Folder with a placeholder
-
-1. Click **Add file** → **Create new file**
-2. Type: `images/.gitkeep`
-   - `.gitkeep` is a dummy file that holds the folder (you'll delete it later when you add real images)
-3. Leave the file content empty or add a comment: `# Placeholder for images`
-4. Click **Commit new file**
-
-### 4. Your Final Structure Should Look Like:
-```
-pjmason-portfolio/
-├── index.html (already exists)
-├── css/
-│   └── style.css
-├── js/
-│   └── main.js
-└── images/
-    └── .gitkeep
+    // Add active state to navigation based on current page
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        }
+    });
+});
