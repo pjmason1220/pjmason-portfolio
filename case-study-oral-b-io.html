@@ -413,10 +413,11 @@
     </style>
 </head>
 <body>
-    <nav>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <nav role="navigation" aria-label="Main navigation">
         <div class="container">
             <a href="index.html" class="logo">PJ Mason</a>
-            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -467,7 +468,7 @@
         </div>
     </div>
 
-    <main>
+    <main id="main-content" role="main">
         <div class="case-study-content">
             <section class="section">
                 <h2>The Challenge</h2>
@@ -831,7 +832,7 @@
         </div>
     </main>
 
-    <footer>
+    <footer role="contentinfo">
         <div class="container">
             <p>&copy; 2025 PJ Mason. All rights reserved.</p>
         </div>

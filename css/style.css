@@ -13,6 +13,41 @@ body {
     background: #fff;
 }
 
+/* Accessibility - Skip to Main Content Link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #0066cc;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 10000;
+    border-radius: 0 0 4px 0;
+    font-weight: 600;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Enhanced Focus States for Keyboard Navigation */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 3px solid #0066cc;
+    outline-offset: 2px;
+}
+
+/* Ensure focus is visible on all interactive elements */
+.nav-links a:focus,
+.mobile-menu-toggle:focus {
+    outline: 3px solid #0066cc;
+    outline-offset: 2px;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
