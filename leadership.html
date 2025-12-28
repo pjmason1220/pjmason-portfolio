@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PJ Mason's approach to building world-class design teams across three continents, with 25 years of experience recruiting and managing creative talent.">
+    <meta name="keywords" content="Design Leadership, Team Building, Global Design Teams, Talent Development, Design Management, Creative Leadership">
+    <meta name="author" content="PJ Mason">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pjmason.com/leadership.html">
+    <meta property="og:title" content="Leadership & Team Building - PJ Mason">
+    <meta property="og:description" content="Building world-class design organizations through strategic talent development and global team management.">
+    <meta property="og:image" content="https://pjmason.com/images/leadership/team-hero.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://pjmason.com/leadership.html">
+    <meta property="twitter:title" content="Leadership & Team Building - PJ Mason">
+    <meta property="twitter:description" content="Building world-class design organizations through strategic talent development and global team management.">
+    <meta property="twitter:image" content="https://pjmason.com/images/leadership/team-hero.jpg">
+
+    <title>Leadership | PJ Mason</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Leadership Page Specific Styles */
+        .leadership-hero {
+            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+            color: white;
+            padding: 80px 0 40px;
+            margin-bottom: 60px;
+        }
+
+        .leadership-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .leadership-hero .subtitle {
+            font-size: 22px;
+            opacity: 0.95;
+            max-width: 800px;
+            line-height: 1.6;
+        }
+
+        .hero-image-container {
+            width: 100%;
+            max-width: 1200px;
+            height: 500px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 40px auto -40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .hero-image-container.placeholder {
+            color: #0066cc;
+            font-size: 18px;
+            font-weight: 600;
+            opacity: 0.4;
+            text-align: center;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+            padding: 0 20px;
+        }
+
+        .section h2 {
+            font-size: 36px;
+            color: #222;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .section h3 {
+            font-size: 24px;
+            color: #222;
+            margin: 40px 0 20px;
+            font-weight: 600;
+        }
+
+        .section p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .content-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Timeline Infographic */
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #0066cc 0%, #004499 100%);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            order: 2;
+        }
+
+        .timeline-item:nth-child(even) .timeline-year {
+            order: 1;
+            text-align: left;
+        }
+
+        .timeline-year {
+            text-align: right;
+            font-size: 24px;
+            font-weight: 700;
+            color: #0066cc;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-left: 4px solid #0066cc;
+        }
+
+        .timeline-content h4 {
+            font-size: 20px;
+            color: #222;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .timeline-content p {
+            font-size: 16px;
+            color: #555;
+            margin: 0;
+        }
+
+        .timeline-stat {
+            display: inline-block;
+            background: #e8f4f8;
+            color: #0066cc;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 5px 5px 5px 0;
+        }
+
+        /* Achievement Cards */
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .achievement-card {
+            background: white;
+            border: 2px solid #e8f4f8;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .achievement-card:hover {
+            border-color: #0066cc;
+            box-shadow: 0 8px 30px rgba(0,102,204,0.15);
+            transform: translateY(-5px);
+        }
+
+        .achievement-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .achievement-card h4 {
+            color: #0066cc;
+            font-size: 18px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .achievement-card p {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Philosophy Cards */
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .philosophy-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8f4f8 100%);
+            padding: 35px;
+            border-radius: 8px;
+            border-left: 5px solid #0066cc;
+        }
+
+        .philosophy-card h4 {
+            color: #0066cc;
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .philosophy-card p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .highlight-box {
+            background: #f9f9f9;
+            border-left: 4px solid #0066cc;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+
+        .highlight-box p {
+            font-size: 17px;
+            color: #444;
+            margin: 0;
+            line-height: 1.8;
+        }
+
+        .closing-statement {
+            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 8px;
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .closing-statement p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            color: white;
+            opacity: 0.95;
+            line-height: 1.7;
+        }
+
+        .stat-highlight {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding-left: 80px;
+            }
+
+            .timeline-item:nth-child(even) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-year {
+                order: initial;
+            }
+
+            .timeline-year {
+                text-align: left;
+                position: absolute;
+                left: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .leadership-hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-image-container {
+                height: 300px;
+            }
+
+            .section h2 {
+                font-size: 28px;
+            }
+
+            .achievement-grid,
+            .philosophy-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="index.html" class="logo">PJ Mason</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="patents.html">Patents</a></li>
+                <li><a href="awards.html">Awards</a></li>
+                <li><a href="leadership.html" class="active">Leadership</a></li>
+                <li><a href="recos.html">Recos</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="leadership-hero">
+        <div class="container">
+            <h1>Leadership & Team Building</h1>
+            <p class="subtitle">
+                Building world-class design organizations through strategic talent development and global team management
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="hero-image-container placeholder">
+            <span>Team Photo Placeholder</span>
+            <span style="font-size: 14px; opacity: 0.6;">1200x600px • Design Leadership Across Three Continents</span>
+        </div>
+    </div>
+
+    <main id="main-content" role="main">
+        <div class="container">
+            <div class="content-wrapper">
+
+                <!-- Section 1: The Talent Pipeline -->
+                <section class="section">
+                    <h2>Building a Constellation of Creative Talent</h2>
+                    <p>
+                        Throughout my 25-year career, I've built a comprehensive approach to talent development
+                        that goes beyond traditional hiring. I've reviewed <span class="stat-highlight">thousands of portfolios</span> from
+                        industrial designers, graphic designers, and UX/UI designers, participated in
+                        <span class="stat-highlight">hundreds of interviews</span> for both co-ops and full-time positions, and been
+                        directly involved in hiring <span class="stat-highlight">hundreds of designers</span> at both LPK and P&G.
+                    </p>
+                    <p>
+                        This extensive experience has enabled me to create a consistent constellation of strong
+                        design and creative talent orbiting my organization. By maintaining relationships with
+                        emerging and experienced designers, running robust internship programs, and staying
+                        connected to design education, I'm able to quickly identify and bring in the right
+                        talent exactly when needed—whether for freelance projects or permanent positions.
+                    </p>
+                </section>
+
+                <!-- Section 2: Team Growth Story -->
+                <section class="section">
+                    <h2>From 2 to 16+: Building a Global Design Force</h2>
+                    <p>
+                        When I joined P&G's Oral Care division, we had just two industrial designers. Over time,
+                        I built this into a 16+ person global design organization spanning North America, Europe,
+                        and Asia. This required developing a bold vision for category transformation, then enrolling
+                        teams across cultures and time zones—through countless late-night Teams calls—to bring that
+                        vision to life with empathy and connection.
+                    </p>
+
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-year">2010</div>
+                            <div class="timeline-content">
+                                <h4>Starting Point</h4>
+                                <p>2 industrial designers in P&G Oral Care (Cincinnati)</p>
+                                <span class="timeline-stat">2 Designers</span>
+                                <span class="timeline-stat">Cincinnati, OH</span>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-year">2014-2017</div>
+                            <div class="timeline-content">
+                                <h4>Germany Expansion</h4>
+                                <p>Integrated 4 existing industrial designers in Kronberg, Germany. Added 6 additional
+                                industrial designers and 2 UX/UI designers to build comprehensive design capability.</p>
+                                <span class="timeline-stat">+12 Designers</span>
+                                <span class="timeline-stat">Kronberg, Germany</span>
+                                <span class="timeline-stat">UX/UI Team</span>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-year">2014-Present</div>
+                            <div class="timeline-content">
+                                <h4>Global Network</h4>
+                                <p>Established design teams across three continents, managing designers in Cincinnati,
+                                Kronberg (Germany), and Beijing (China). Total team: 16+ designers collaborating across
+                                time zones and cultures.</p>
+                                <span class="timeline-stat">16+ Designers</span>
+                                <span class="timeline-stat">3 Continents</span>
+                                <span class="timeline-stat">Global 24/7</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 3: International Co-op & Internship Program -->
+                <section class="section">
+                    <h2>Bridging Continents Through Design Education</h2>
+                    <p>
+                        I established and ran an international co-op and internship program that created unique
+                        cross-cultural opportunities:
+                    </p>
+                    <div class="highlight-box">
+                        <p>
+                            <strong>German to US:</strong> Recruited German students from University of Wuppertal
+                            (studying abroad at University of Cincinnati) to intern at P&G's Cincinnati headquarters
+                        </p>
+                    </div>
+                    <div class="highlight-box">
+                        <p>
+                            <strong>US to Europe:</strong> Recruited University of Cincinnati Industrial Design
+                            students (studying abroad in Europe) to intern at our Kronberg, Germany office
+                        </p>
+                    </div>
+                    <p>
+                        This program created a talent pipeline that gave young designers global experience while
+                        giving P&G access to diverse, emerging talent. Many of these interns went on to full-time
+                        roles within the organization, having already proven their ability to work across cultures
+                        and contribute to our design vision.
+                    </p>
+                </section>
+
+                <!-- Section 4: Key Achievements -->
+                <section class="section">
+                    <h2>Recognition & Impact</h2>
+
+                    <div class="achievement-grid">
+                        <div class="achievement-card">
+                            <div class="achievement-icon">🏆</div>
+                            <h4>External Design Awards</h4>
+                            <p>Team has won multiple German Design Awards, iF Awards, Red Dot Awards, and CES Innovation Awards</p>
+                        </div>
+
+                        <div class="achievement-card">
+                            <div class="achievement-icon">🎖️</div>
+                            <h4>P&G Design Leadership Awards</h4>
+                            <p>Multiple team members recognized for design excellence and leadership contributions</p>
+                        </div>
+
+                        <div class="achievement-card">
+                            <div class="achievement-icon">💡</div>
+                            <h4>P&G Innovation Awards</h4>
+                            <p>Organization recognized for best innovation contributions and breakthrough thinking</p>
+                        </div>
+
+                        <div class="achievement-card">
+                            <div class="achievement-icon">⭐</div>
+                            <h4>P&G CEO Achievement Awards</h4>
+                            <p>Multiple team members received company's highest recognition for exceptional work</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 5: Leadership Philosophy -->
+                <section class="section">
+                    <h2>A Vision-Driven, People-First Approach</h2>
+
+                    <div class="philosophy-grid">
+                        <div class="philosophy-card">
+                            <h4>Develop a Bold Vision</h4>
+                            <p>
+                                Great teams need great direction. I focus on developing and articulating a bold
+                                vision for the future—how we'll revolutionize the consumer experience in our category.
+                            </p>
+                        </div>
+
+                        <div class="philosophy-card">
+                            <h4>Enroll the Team</h4>
+                            <p>
+                                Vision without enrollment is just a dream. I ensure every team member understands
+                                their role in bringing the vision to life and feels ownership of the outcome.
+                            </p>
+                        </div>
+
+                        <div class="philosophy-card">
+                            <h4>Right People, Right Work</h4>
+                            <p>
+                                Strategic talent placement is critical. I ensure we have the right people doing
+                                the right work—matching skills, passions, and growth opportunities.
+                            </p>
+                        </div>
+
+                        <div class="philosophy-card">
+                            <h4>Build Visibility & Support</h4>
+                            <p>
+                                I actively communicate team capabilities and vision to leadership, ensuring
+                                sufficient funding, resources, and organizational support to achieve our goals.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="closing-statement">
+                        <p>
+                            My leadership style is inclusive and supportive, rooted in the same principles I
+                            apply to design: deep empathy, hands-on engagement, and rapid iteration toward excellence.
+                        </p>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; 2025 PJ Mason. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
