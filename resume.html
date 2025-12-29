@@ -27,16 +27,18 @@
     <style>
         /* Resume Page Specific Styles */
         .resume-hero {
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding: 60px 0;
             margin-bottom: 60px;
         }
-        
+
         .resume-hero h1 {
             font-size: 48px;
-            margin-bottom: 20px;
+            margin: 0;
         }
-        
+
         .download-resume {
             display: inline-block;
             padding: 15px 35px;
@@ -46,12 +48,20 @@
             border-radius: 4px;
             font-size: 16px;
             font-weight: 600;
-            margin-top: 20px;
             transition: background 0.3s;
+            white-space: nowrap;
         }
-        
+
         .download-resume:hover {
             background: #004499;
+        }
+
+        @media (max-width: 768px) {
+            .resume-hero {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
         }
         
         .resume-section {
@@ -333,10 +343,7 @@
         <div class="container">
             <div class="resume-hero">
                 <h1>Resume</h1>
-                <p style="font-size: 18px; color: #666; margin-bottom: 20px;">
-                    298 Forest Edge Drive, South Lebanon, Ohio 45065 | 513-282-8775 | pjmason1220@gmail.com
-                </p>
-                <a href="PJ_Mason_Resume.pdf" class="download-resume" download>Download PDF Resume</a>
+                <a href="files/PJ_Mason_Resume.pdf" class="download-resume" download>Download PDF Resume</a>
             </div>
 
             <!-- Profile Section -->
