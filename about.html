@@ -97,66 +97,56 @@
             font-weight: 600;
         }
         
-        /* Timeline */
-        .timeline {
-            position: relative;
-            padding-left: 40px;
+        /* Global Experience Section */
+        .global-experience {
+            margin-top: 60px;
+        }
+
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
             margin-top: 40px;
         }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: #0066cc;
+
+        .location-card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px 20px;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid #0066cc;
         }
-        
-        .timeline-item {
-            position: relative;
-            margin-bottom: 40px;
-            padding-left: 30px;
+
+        .location-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(0,102,204,0.2);
         }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -46px;
-            top: 5px;
-            width: 15px;
-            height: 15px;
-            background: #0066cc;
-            border: 3px solid #fff;
-            border-radius: 50%;
-            box-shadow: 0 0 0 3px #0066cc;
+
+        .location-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+            display: block;
         }
-        
-        .timeline-year {
-            font-size: 14px;
-            color: #0066cc;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        
-        .timeline-title {
-            font-size: 20px;
-            font-weight: 600;
+
+        .location-city {
+            font-size: 24px;
+            font-weight: 700;
             color: #222;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
-        
-        .timeline-company {
+
+        .location-country {
             font-size: 16px;
             color: #666;
-            margin-bottom: 10px;
+            font-weight: 500;
         }
-        
-        .timeline-description {
-            font-size: 15px;
-            color: #555;
-            line-height: 1.6;
+
+        @media (max-width: 1024px) {
+            .locations-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
         
         /* Philosophy Cards */
@@ -237,15 +227,19 @@
         
         /* Responsive */
         @media (max-width: 768px) {
+            .locations-grid {
+                grid-template-columns: 1fr;
+            }
+
             .about-hero {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-            
+
             .headshot {
                 height: 350px;
             }
-            
+
             .about-intro h1 {
                 font-size: 32px;
             }
@@ -392,82 +386,31 @@
                 </div>
             </section>
 
-            <section class="bio-section">
-                <h2>Career Journey</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-year">2014 - Present</div>
-                        <div class="timeline-title">Senior Director, Design</div>
-                        <div class="timeline-company">P&G - Oral Care & Smart Products | Frankfurt & Cincinnati</div>
-                        <div class="timeline-description">
-                            Leading global design teams across North America, China, and Europe. Responsible for vision 
-                            development across multiple innovation platforms including Oral-B iO, which generated hundreds 
-                            of millions in sales growth. Developed P&G's first Digital Design Capability from external 
-                            resources to fully internalized team.
-                        </div>
+            <section class="bio-section global-experience">
+                <h2>Global Design Experience</h2>
+                <div class="locations-grid">
+                    <div class="location-card">
+                        <span class="location-icon">🇭🇰</span>
+                        <div class="location-city">Hong Kong</div>
+                        <div class="location-country">China</div>
                     </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-year">2010 - 2014</div>
-                        <div class="timeline-title">Principal Design Manager</div>
-                        <div class="timeline-company">P&G - Oral Care | Cincinnati, OH</div>
-                        <div class="timeline-description">
-                            Led Oral Care Design Front End Innovation as part of multi-functional FEI Leadership Team. 
-                            Created portfolio management systems linking trends, consumer understanding, and technologies 
-                            into innovation portfolio. Led strategic definition of category-first Augmented Service Offering.
-                        </div>
+                    <div class="location-card">
+                        <span class="location-icon">🇯🇵</span>
+                        <div class="location-city">Kobe</div>
+                        <div class="location-country">Japan</div>
                     </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-year">2008 - 2010</div>
-                        <div class="timeline-title">Principal Design Manager</div>
-                        <div class="timeline-company">P&G - Hair Care | Cincinnati, OH</div>
-                        <div class="timeline-description">
-                            Led cross-category packaging asset deployment strategy for HairCare. Delivered $55M annual cost 
-                            savings, 30% reduction in portfolio complexity, and 50% reduction in time-to-market for new 
-                            packaging initiatives.
-                        </div>
+                    <div class="location-card">
+                        <span class="location-icon">🇺🇸</span>
+                        <div class="location-city">Cincinnati</div>
+                        <div class="location-country">Ohio, USA</div>
                     </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-year">2005 - 2008</div>
-                        <div class="timeline-title">Senior Design Manager</div>
-                        <div class="timeline-company">P&G - Hair Care | Cincinnati & Kobe, Japan</div>
-                        <div class="timeline-description">
-                            Led 3D vision development for Pantene brand globally as part of multi-functional team that 
-                            restaged the brand. Designed and delivered 3D packaging assets for Pantene total brand restage 
-                            to multiple countries and regions globally.
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-year">2003 - 2005</div>
-                        <div class="timeline-title">Design Manager</div>
-                        <div class="timeline-company">P&G - Fem Care | Cincinnati, OH</div>
-                        <div class="timeline-description">
-                            Led development of new-to-world brand for FemCare category whitespace. Delivered 3rd largest 
-                            initiative for Fem Care in previous 10 years. Initiated first-ever Design partnership with 
-                            in-house prototypers.
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-year">2000 - 2003</div>
-                        <div class="timeline-title">Senior Industrial Designer</div>
-                        <div class="timeline-company">LPK | Cincinnati, OH</div>
-                        <div class="timeline-description">
-                            Design consultancy work across multiple consumer product categories.
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-year">1996 - 2000</div>
-                        <div class="timeline-title">Industrial Designer</div>
-                        <div class="timeline-company">Philips Consumer Electronics & Karrot Design | Knoxville, TN & Hong Kong</div>
-                        <div class="timeline-description">
-                            Early career roles including co-op positions at Philips Consumer Electronics and international 
-                            experience at Karrot Design in Hong Kong, China.
-                        </div>
+                    <div class="location-card">
+                        <span class="location-icon">🇩🇪</span>
+                        <div class="location-city">Frankfurt</div>
+                        <div class="location-country">Germany</div>
                     </div>
                 </div>
             </section>
