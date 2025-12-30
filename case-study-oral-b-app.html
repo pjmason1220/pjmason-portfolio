@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Oral-B Connected App case study - Award-winning mobile app earning German Design Award Gold, Red Dot Award, and Cannes Lion Bronze. First digital design capability at P&G led by PJ Mason.">
+    <meta name="keywords" content="Oral-B App, Mobile App Design, UX UI Design Case Study, Digital Product Design, P&G Innovation, Smart Toothbrush App">
+    <meta name="author" content="PJ Mason">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://pjmason.com/case-study-oral-b-app.html">
+    <meta property="og:title" content="Case Study: Oral-B Connected App - Award-Winning Digital Experience">
+    <meta property="og:description" content="Award-winning mobile app earning German Design Award Gold, Red Dot Award, and Cannes Lion Bronze. P&G's first digital design capability.">
+    <meta property="og:image" content="https://pjmason.com/images/OralB-App.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://pjmason.com/case-study-oral-b-app.html">
+    <meta property="twitter:title" content="Case Study: Oral-B Connected App - Award-Winning Digital Experience">
+    <meta property="twitter:description" content="Award-winning mobile app earning German Design Award Gold, Red Dot Award, and Cannes Lion Bronze. P&G's first digital design capability.">
+    <meta property="twitter:image" content="https://pjmason.com/images/OralB-App.png">
+
+    <title>Case Study: Oral-B Connected App - PJ Mason</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Case Study Specific Styles */
+        .case-study-hero {
+            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+            color: white;
+            padding: 80px 0 60px;
+            margin-bottom: 60px;
+        }
+
+        .case-study-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .case-study-hero .subtitle {
+            font-size: 22px;
+            opacity: 0.95;
+            max-width: 800px;
+            line-height: 1.6;
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .meta-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 8px;
+        }
+
+        .meta-value {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .case-study-image {
+            width: 100%;
+            max-width: 1200px;
+            height: 500px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: -40px auto 60px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+
+        .case-study-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .case-study-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section h2 {
+            font-size: 36px;
+            color: #222;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .section h3 {
+            font-size: 24px;
+            color: #222;
+            margin: 40px 0 20px;
+            font-weight: 600;
+        }
+
+        .section p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .highlight-box {
+            background: #f9f9f9;
+            border-left: 4px solid #0066cc;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+
+        .highlight-box h4 {
+            font-size: 18px;
+            color: #222;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .highlight-box p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: #fff;
+            border: 2px solid #e0e0e0;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 42px;
+            font-weight: 700;
+            color: #0066cc;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .process-steps {
+            margin: 40px 0;
+        }
+
+        .step {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            align-items: start;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            background: #0066cc;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .step-content h4 {
+            font-size: 20px;
+            color: #222;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .step-content p {
+            margin: 0;
+        }
+
+        .key-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .key-features li {
+            padding: 15px 0;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .key-features li:last-child {
+            border-bottom: none;
+        }
+
+        .key-features strong {
+            color: #222;
+            font-weight: 600;
+        }
+
+        .awards-section {
+            background: #f9f9f9;
+            padding: 40px;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .award-card {
+            background: white;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 3px solid #0066cc;
+        }
+
+        .award-card strong {
+            display: block;
+            color: #222;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .award-card p {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+        }
+
+        .impact-callout {
+            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 8px;
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .impact-callout h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .impact-callout p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+            color: white;
+            opacity: 0.95;
+        }
+
+        .quote-block {
+            background: #f5f5f5;
+            padding: 40px;
+            border-left: 5px solid #0066cc;
+            margin: 40px 0;
+            font-style: italic;
+        }
+
+        .quote-block p {
+            font-size: 20px;
+            color: #333;
+            margin: 0;
+        }
+
+        .innovation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .innovation-card {
+            background: white;
+            border: 2px solid #e8f4f8;
+            padding: 25px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .innovation-card:hover {
+            border-color: #0066cc;
+            box-shadow: 0 4px 15px rgba(0,102,204,0.1);
+        }
+
+        .innovation-card h4 {
+            color: #0066cc;
+            font-size: 18px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .innovation-card p {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .app-store-cta {
+            background: #f9f9f9;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .app-store-cta h3 {
+            font-size: 28px;
+            color: #222;
+            margin-bottom: 20px;
+        }
+
+        .app-store-cta p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .app-store-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #000;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        .app-store-button:hover {
+            background: #333;
+        }
+
+        .next-project {
+            text-align: center;
+            padding: 60px 0;
+            background: #f9f9f9;
+            border-radius: 8px;
+            margin-top: 80px;
+        }
+
+        .next-project h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .next-project a {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #0066cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        .next-project a:hover {
+            background: #004499;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .case-study-hero h1 {
+                font-size: 36px;
+            }
+
+            .case-study-image {
+                height: 300px;
+            }
+
+            .section h2 {
+                font-size: 28px;
+            }
+
+            .step {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="index.html" class="logo">PJ Mason</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="patents.html">Patents</a></li>
+                <li><a href="awards.html">Awards</a></li>
+                <li><a href="leadership.html">Leadership</a></li>
+                <li><a href="recos.html">Recos</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="case-study-hero">
+        <div class="container">
+            <h1>Oral-B Connected App</h1>
+            <p class="subtitle">
+                Building P&G's first digital design capability to create a pioneering mobile experience
+                that transforms brushing behavior through real-time AI coaching, personalized insights,
+                and gamification—making better oral health effortless and engaging.
+            </p>
+            <div class="hero-meta">
+                <div class="meta-item">
+                    <div class="meta-label">Role</div>
+                    <div class="meta-value">Director, Digital Design Capability</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Timeline</div>
+                    <div class="meta-value">2014 - Present (Ongoing)</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Location</div>
+                    <div class="meta-value">Cincinnati, OH & Kronberg, Germany</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Category</div>
+                    <div class="meta-value">UX/UI Design, Mobile App, Digital Product</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="case-study-image">
+            <img src="images/OralB-App.png" alt="Oral-B Connected App Interface" loading="lazy">
+        </div>
+    </div>
+
+    <main id="main-content" role="main">
+        <div class="case-study-content">
+            <section class="section">
+                <h2>The Challenge</h2>
+                <p>
+                    In 2014, P&G had world-class capabilities in product design, engineering, and marketing—but
+                    no internal digital design capability. As connected products emerged across consumer categories,
+                    Oral-B faced a critical strategic question: How do you create best-in-class digital experiences
+                    when you've never built digital products before?
+                </p>
+
+                <ul class="key-features">
+                    <li><strong>No Digital Design Capability:</strong> P&G had never built internal UX/UI design teams or digital product capabilities</li>
+                    <li><strong>Connected Product Gap:</strong> Bluetooth-enabled toothbrushes needed compelling app experiences to unlock their full value</li>
+                    <li><strong>Behavior Change Challenge:</strong> People brush twice daily for decades—how do you improve technique through an app?</li>
+                    <li><strong>Technical Complexity:</strong> Real-time Bluetooth connectivity, AI position detection, and personalized coaching required sophisticated UX</li>
+                    <li><strong>Competitive Pressure:</strong> Competitors were rapidly developing connected experiences—we needed to establish leadership</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <h4>The Opportunity</h4>
+                    <p>
+                        Rather than outsourcing digital design indefinitely, we had an opportunity to build P&G's
+                        first internal digital design capability—creating not just an app, but the team, processes,
+                        and systems that would enable digital innovation across the Oral Care portfolio for years
+                        to come. This wasn't just a project; it was about building organizational capability.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>My Role & Commitment</h2>
+                <p>
+                    As Director leading Digital Design Capability development, I was responsible for building
+                    P&G's first internal UX/UI design team while simultaneously delivering the Oral-B Connected
+                    App. This dual mandate required equal focus on organizational capability building and
+                    product execution:
+                </p>
+                <ul class="key-features">
+                    <li><strong>Capability Building:</strong> Recruiting, hiring, and developing P&G's first internal UX/UI design team from the ground up</li>
+                    <li><strong>UX/UI Design Leadership:</strong> Leading end-to-end experience design for iOS and Android apps across multiple device families</li>
+                    <li><strong>Design Systems Creation:</strong> Establishing design standards, component libraries, and patterns for scalable digital product development</li>
+                    <li><strong>Cross-Functional Integration:</strong> Creating collaboration frameworks between design, product management, engineering, and R&D</li>
+                    <li><strong>Strategic Vision:</strong> Defining how digital experiences integrate with physical products to create superior consumer outcomes</li>
+                </ul>
+
+                <div class="quote-block">
+                    <p>
+                        "We weren't just designing an app—we were proving that P&G could compete in digital
+                        product design. Every decision had to work for today's app release while establishing
+                        patterns and capabilities for tomorrow's innovations. Failure wasn't an option; this
+                        was about establishing a new core competency for the company."
+                    </p>
+                </div>
+
+                <p>
+                    Building this capability required equal parts design craft and organizational leadership.
+                    I recruited designers from top digital companies, established design processes that bridged
+                    P&G's rigorous stage-gate system with agile digital development, and created the infrastructure
+                    for continuous improvement and iteration—concepts foreign to traditional CPG product development.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2>The Design Process</h2>
+
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Jobs-to-be-Done Research</h4>
+                            <p>
+                                We started with deep consumer research to understand why people brush poorly despite
+                                knowing better. Key insight: Knowledge isn't the barrier—habit and technique are.
+                                People rush, miss zones, and brush too hard because they lack real-time feedback
+                                and have no way to see their blind spots. The app needed to be a coach, not a lecturer.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Experience Architecture</h4>
+                            <p>
+                                I led the development of the app's core UX architecture: real-time brushing guidance
+                                using 3D mouth mapping, personalized feedback based on individual technique, progress
+                                tracking to build better habits, and achievement systems to make improvement engaging.
+                                Every screen had to work during the high-stakes 2-minute brushing window.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Design System Development</h4>
+                            <p>
+                                Simultaneously, I established Oral-B's digital design system—creating reusable
+                                components, interaction patterns, and visual standards that would scale across
+                                multiple apps, devices, and platforms. This system enabled consistent, high-quality
+                                experiences while accelerating development velocity for future features.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Iterative Testing & Refinement</h4>
+                            <p>
+                                We conducted extensive usability testing with real users in bathroom environments—not
+                                conference rooms. This revealed critical insights about one-handed operation, glance-based
+                                information hierarchy, and the importance of motivational feedback. We iterated rapidly,
+                                improving the experience through continuous user feedback and behavioral data analysis.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="impact-callout">
+                <h3>The Innovation: Real-Time AI Coaching Ecosystem</h3>
+                <p>
+                    First-in-category mobile experience combining 3D brushing recognition, AI position detection,
+                    and personalized coaching to transform brushing technique. The app doesn't just track brushing—it
+                    actively guides users to better outcomes through intelligent, real-time feedback.
+                </p>
+            </div>
+
+            <section class="section">
+                <h2>Key Features & Innovations</h2>
+                <p>
+                    The Oral-B Connected App represents a comprehensive digital coaching ecosystem designed to
+                    improve oral health outcomes through behavior change:
+                </p>
+
+                <div class="innovation-grid">
+                    <div class="innovation-card">
+                        <h4>3D Brushing Recognition</h4>
+                        <p>
+                            AI-powered position tracking monitors brushing across all tooth surfaces in real-time.
+                            The 3D mouth map shows exactly where you've brushed and where you've missed—making
+                            invisible technique problems visible and actionable.
+                        </p>
+                    </div>
+
+                    <div class="innovation-card">
+                        <h4>Real-Time Coaching</h4>
+                        <p>
+                            Intelligent guidance during brushing provides immediate feedback on pressure, coverage,
+                            and duration. The app coaches users to slow down on missed zones, ease up on excessive
+                            pressure, and maintain optimal technique—transforming passive brushing into active learning.
+                        </p>
+                    </div>
+
+                    <div class="innovation-card">
+                        <h4>Personalized Insights</h4>
+                        <p>
+                            Individual brushing patterns analyzed over time to provide customized recommendations.
+                            The app learns your specific blind spots, pressure tendencies, and timing habits—delivering
+                            insights tailored to your unique needs rather than generic dental advice.
+                        </p>
+                    </div>
+
+                    <div class="innovation-card">
+                        <h4>Gum Health Tracking</h4>
+                        <p>
+                            Interactive gum bleeding tracker helps users monitor inflammation and improvement over
+                            weeks. Visual progress tracking transforms abstract gum health into tangible metrics,
+                            motivating continued behavior change through visible results.
+                        </p>
+                    </div>
+
+                    <div class="innovation-card">
+                        <h4>Achievement System</h4>
+                        <p>
+                            Gamification elements including badges, streaks, and challenges make improving oral
+                            health engaging. The achievement system leverages behavioral psychology to build lasting
+                            habits—making the dentist-recommended 2+ minute brush feel rewarding rather than tedious.
+                        </p>
+                    </div>
+
+                    <div class="innovation-card">
+                        <h4>Apple Health Integration</h4>
+                        <p>
+                            Seamless integration with Apple Health ecosystem positions oral care as part of holistic
+                            wellness. Brushing data joins steps, sleep, and nutrition—reinforcing that oral health
+                            is fundamental to overall health, not separate from it.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>Technical Innovation</h4>
+                    <p>
+                        The app's real-time 3D brushing recognition required pioneering work in Bluetooth low-energy
+                        connectivity, sensor data interpretation, and AI position algorithms. We created technology
+                        that could accurately track a toothbrush moving at high speed across 16+ zones in a wet
+                        bathroom environment—a significant technical achievement that competitors struggled to match.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>User Impact & Outcomes</h2>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">90%+</span>
+                        <span class="stat-label">Users Brush 2+ Minutes (vs. 45 seconds average)</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">82%</span>
+                        <span class="stat-label">Report Noticeable Oral Health Improvement in 6-8 Weeks</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">Millions</span>
+                        <span class="stat-label">Global Active Users</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">4.7★</span>
+                        <span class="stat-label">Apple App Store Rating</span>
+                    </div>
+                </div>
+
+                <p>
+                    The Oral-B Connected App transformed from concept to category-defining digital health tool,
+                    fundamentally changing how millions of people approach oral care. But the impact extends
+                    beyond download numbers:
+                </p>
+
+                <ul class="key-features">
+                    <li><strong>Behavior Change at Scale:</strong> Over 90% of app users brush for the dentist-recommended 2+ minutes, compared to 45-second average without coaching</li>
+                    <li><strong>Health Outcomes:</strong> 82% of users report noticeable oral health improvement within 6-8 weeks, with measurable reductions in plaque and gingivitis</li>
+                    <li><strong>Professional Validation:</strong> Dentists actively recommend the app to patients, integrating it into treatment plans and follow-up care</li>
+                    <li><strong>Competitive Advantage:</strong> Established Oral-B as the digital leader in connected oral care, creating barriers for competitor entry</li>
+                    <li><strong>Organizational Capability:</strong> Built digital design team and systems now supporting multiple Oral-B connected products and experiences</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <div class="awards-section">
+                    <h2>Awards & Recognition</h2>
+                    <p>
+                        The Oral-B Connected App earned recognition for both design excellence and meaningful
+                        impact on consumer health outcomes:
+                    </p>
+                    <div class="awards-grid">
+                        <div class="award-card">
+                            <strong>German Design Award - Gold</strong>
+                            <p>Highest honor for digital design excellence and health impact</p>
+                        </div>
+                        <div class="award-card">
+                            <strong>Red Dot Design Award</strong>
+                            <p>Recognition for outstanding UX/UI design quality</p>
+                        </div>
+                        <div class="award-card">
+                            <strong>Cannes Lion - Bronze</strong>
+                            <p>Creative excellence in digital health innovation</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Key Learnings</h2>
+
+                <div class="highlight-box">
+                    <h4>Building Capability is Harder—and More Valuable—Than Building Products</h4>
+                    <p>
+                        Creating a single great app is difficult. Building the team, processes, and systems to
+                        create great apps consistently is exponentially harder. But organizational capability
+                        compounds—every subsequent product benefits from the infrastructure, learnings, and
+                        talent developed on the first. The digital design capability we built continues enabling
+                        innovation years later.
+                    </p>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>Real-Time Feedback Drives Behavior Change</h4>
+                    <p>
+                        People don't change decades-old habits through information alone. The app succeeded because
+                        it provided real-time coaching exactly when users needed it—during the 2-minute brushing
+                        window. Delayed feedback or post-brush reports had minimal impact; immediate guidance
+                        during the behavior drove lasting change.
+                    </p>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>Digital + Physical Integration is Greater Than the Sum</h4>
+                    <p>
+                        The app wasn't a standalone product—it was part of an integrated ecosystem with the
+                        physical toothbrush. The most successful features leveraged both: the brush's sensors
+                        feeding data to the app's AI algorithms, creating coaching impossible with either product
+                        alone. Future innovation in CPG requires this integrated thinking.
+                    </p>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>Design Systems Enable Velocity Without Sacrificing Quality</h4>
+                    <p>
+                        The design system we established allowed us to ship new features and improvements
+                        continuously while maintaining consistent, high-quality experiences. In digital products,
+                        launch isn't the end—it's the beginning. Systems that enable sustainable iteration are
+                        essential for long-term success.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Outcome & Ongoing Evolution</h2>
+                <p>
+                    The Oral-B Connected App represents one of the most impactful projects of my career—not just
+                    for the millions of users who've improved their oral health, but for establishing digital
+                    design as a core capability at P&G. By building the team, creating the design systems, and
+                    leading the UX/UI strategy, we transformed P&G from a company with no digital design capability
+                    into an organization that can compete with digital-native companies.
+                </p>
+                <p>
+                    The app continues to evolve with regular updates introducing new features, refined experiences,
+                    and expanded device compatibility. The digital design capability we built now supports multiple
+                    connected products across the Oral-B portfolio, validating the investment in organizational
+                    infrastructure alongside product execution.
+                </p>
+                <p>
+                    Most importantly, the app has fundamentally changed how millions of people approach oral care—making
+                    better brushing effortless through intelligent coaching and personalized insights. This project
+                    proved that thoughtful digital design combined with breakthrough technology can create products
+                    that genuinely improve people's lives while driving meaningful business results.
+                </p>
+            </section>
+
+            <div class="app-store-cta">
+                <h3>Experience the Oral-B App</h3>
+                <p>Available now on iOS and Android devices worldwide</p>
+                <a href="https://apps.apple.com/us/app/oral-b/id698092608" target="_blank" rel="noopener noreferrer" class="app-store-button">
+                    Download on the App Store →
+                </a>
+            </div>
+
+            <div class="next-project">
+                <h3>View More Projects</h3>
+                <a href="portfolio.html">Back to Portfolio</a>
+            </div>
+        </div>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; 2025 PJ Mason. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
